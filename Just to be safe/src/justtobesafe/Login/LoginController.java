@@ -1,34 +1,32 @@
-package justtobesafe.Login;
+package justtobesafe.login;
 
-import com.sun.javafx.logging.PlatformLogger;
 import javafx.fxml.FXML;
-import javafx.application.Application;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.TextField;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
-//import static jdk.internal.net.http.common.Utils.close;
+import justtobesafe.encryption.EncryptionHandler;
+
+import javax.swing.*;
 
 
 public class LoginController {
+    public CheckBox pswd_checkbox;
     @FXML
-    private TextField password;
-
+    private PasswordField password;
     @FXML
     private Label pswd_warning;
 
+
+
     Preferences preference;
+    EncryptionHandler encryptionHandler=new EncryptionHandler();
+    String file = "src/resources/passwd/passwd";
 
 
 
@@ -46,19 +44,35 @@ public class LoginController {
         //}
     }
 
-
-
+    //Login Related Functions
+    public void EnterKeyPress(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            authenticatePSWD();
+        }
+    }
 
     public void LoginButtonOnclick(javafx.scene.input.MouseEvent mouseEvent) {
-        //password.getStyleClass().add("wrong-credentials");
-        pswd_warning.setText("Wrong Password");
-        password.setText("");
+        authenticatePSWD();
     }
 
+    public void authenticatePSWD(){
+        String pswd=encryptionHandler.sha512(password.getText());             //User Entered password
+        String passwd=encryptionHandler.cc_decrypt(encryptionHandler.readPasswordFile(file));      //Program stored password
+
+        if(pswd.equals(passwd)){
+            pswd_warning.setText("Access Granted");
+            password.setText("");
+        }else{
+            pswd_warning.setText("Access Denied");
+            password.setText("");
+        }
+    }
+
+    //MISC functions
     public void PSWDFieldOnclick(javafx.scene.input.MouseEvent mouseEvent) {
         pswd_warning.setText("");
+        password.setPromptText("Enter Password");
     }
-
     //private void closeStage() {
         //close();
     //}
