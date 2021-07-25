@@ -7,6 +7,10 @@
     -fx-primary : #2A2E37;
     -fx-secondary : #FFFF8D;
     -fx-primarytext : #B2B2B2;
+    -fx-blvck : #1f1f1f;
+    -fx-porcelain : #f1f1f1;
+    -fx-pimple_yellow : #FFFF8D;
+
     -fx-blue: #1976D2;
     -fx-red: #FF0000;
     -fx-color-1:#1976D2;
@@ -44,7 +48,23 @@
     -fx-text-fill: derive(-fx-secondary, 20%);
 }
 
+.checkbox{
+    -fx-text-fill: -fx-pimple_yellow;
+}
+
+.pswd-field
+{
+    -fx-prompt-text-fill: -fx-porcelain;
+    -fx-border-color: -fx-pimple_yellow;
+    -fx-background-color: -fx-blvck;
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-font-size : 12pt;
+    -jfx-focus-color: -fx-secondary;
+}
+
 .label{
+    -fx-text-alignment: center;
+    -fx-font-size : 12pt;
     -fx-text-fill: -fx-primarytext;
 }
 /*Login Screen Specific*/
