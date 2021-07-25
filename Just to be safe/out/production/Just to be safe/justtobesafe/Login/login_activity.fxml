@@ -4,15 +4,15 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.Login.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#EnterKeyPress" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.login.LoginController">
    <children>
-      <Button layoutX="268.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#LoginButtonOnclick" text="Login" />
-      <TextField fx:id="password" layoutX="200.0" layoutY="182.0" promptText="Enter Password" styleClass="table-view" onMouseClicked="#PSWDFieldOnclick"  />
-      <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="276.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="270.0" layoutY="284.0" mnemonicParsing="false" onMouseClicked="#LoginButtonOnclick" text="Login" />
+      <PasswordField fx:id="password" layoutX="201.0" layoutY="187.0" onMouseClicked="#PSWDFieldOnclick" promptText="Enter Password" styleClass="pswd-field" />
+      <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="276.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/icon.png" />
          </image></ImageView>
-      <Label fx:id="pswd_warning" layoutX="200.0" layoutY="221.0" styleClass="warning-label" textFill="#bc0000" />
+      <Label fx:id="pswd_warning" layoutX="200.0" layoutY="239.0" prefHeight="23.0" prefWidth="202.0" styleClass="warning-label" textAlignment="CENTER" textFill="#bc0000" />
 
    </children>
 </AnchorPane>
