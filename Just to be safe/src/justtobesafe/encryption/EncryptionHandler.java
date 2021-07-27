@@ -148,24 +148,6 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
     }
 
     @Override
-    public String md4(String base) {
-        try{
-            final MessageDigest digest = MessageDigest.getInstance("MD4");
-            final byte[] hash = digest.digest(base.getBytes("UTF-8"));
-            final StringBuilder hexString = new StringBuilder();
-            for (int i = 0; i < hash.length; i++) {
-                final String hex = Integer.toHexString(0xff & hash[i]);
-                if(hex.length() == 1)
-                    hexString.append('0');
-                hexString.append(hex);
-            }
-            return hexString.toString();
-        } catch(Exception ex){
-            throw new RuntimeException(ex);
-        }
-    }
-
-    @Override
     public String md5(String base) {
         try{
             final MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -183,21 +165,4 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
         }
     }
 
-    @Override
-    public String md6(String base) {
-        try{
-            final MessageDigest digest = MessageDigest.getInstance("MD6");
-            final byte[] hash = digest.digest(base.getBytes("UTF-8"));
-            final StringBuilder hexString = new StringBuilder();
-            for (int i = 0; i < hash.length; i++) {
-                final String hex = Integer.toHexString(0xff & hash[i]);
-                if(hex.length() == 1)
-                    hexString.append('0');
-                hexString.append(hex);
-            }
-            return hexString.toString();
-        } catch(Exception ex){
-            throw new RuntimeException(ex);
-        }
-    }
 }
