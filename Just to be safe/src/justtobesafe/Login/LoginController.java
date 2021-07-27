@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 // Other imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.encryption.EncryptionHandler;
+import justtobesafe.activity.ActivityLocations;
 
 
 
@@ -24,8 +25,7 @@ public class LoginController {
 
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
-    String file = "src/resources/passwd/passwd";
-    String homeMenu_location = "/justtobesafe/homemenu/homemenu_activity.fxml";
+    //String file = "src/resources/passwd/passwd";
 
     //Login Related Functions
     //Authenticate password when user presses "Enter" key after typing in password field
@@ -40,7 +40,7 @@ public class LoginController {
     }
     //Authenticate password
     public void authenticatePSWD(){
-        String passwd=encryptionHandler.readPasswordFile(file);         //retrieve data from passwd
+        String passwd=encryptionHandler.readPasswordFile(ActivityLocations.passwd);         //retrieve data from passwd
         String pswd=password.getText();                                 //User Entered password
         pswd=encryptionHandler.cc_encrypt(pswd);                        //Caesar Cipher Encrypt password
         pswd=encryptionHandler.sha512(pswd);                            //Hash Encrypted password using Secure Hashing Algorithm 512
@@ -52,7 +52,7 @@ public class LoginController {
             //pswd_warning.setText("Access Granted");
             //password.setText("");
             activityHandler.closeStage(LoginMenu);
-            activityHandler.loadActivity(homeMenu_location);
+            activityHandler.loadActivity(ActivityLocations.homeMenu);
         }else{
             pswd_warning.setText("Access Denied");
             password.setText("");
