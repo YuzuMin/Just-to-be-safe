@@ -203,6 +203,7 @@
 
 /*Login Screen Specific*/
 .warning-label{
+    -fx-text-alignment: CENTER;
     -fx-text-fill: #FC4332;
 }
 
