@@ -62,11 +62,11 @@
     -fx-background-color: Transparent;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
-    -fx-font-size: 10pt;
-    -fx-underline: true;
+    -fx-font-size: 11pt;
 }
 .copy-button:hover{
     -fx-text-fill: -fx-pimple_yellow;
+    -fx-underline: true;
 }
 .copy-button:pressed{
     -fx-text-fill: -fx-darkporcelain;
