@@ -54,9 +54,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -187,7 +187,7 @@
       <option name="VM_PARAMETERS" value="--module-path $PROJECT_DIR$/../javafx-sdk-16/lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="justtobesafe.*" />
+          <option name="PATTERN" value="justtobesafe.activity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
