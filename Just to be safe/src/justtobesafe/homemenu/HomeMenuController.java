@@ -2,7 +2,6 @@ package justtobesafe.homemenu;
 
 // Java FX imports
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -10,17 +9,13 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 // Program Imports
 import javafx.stage.Stage;
-import justtobesafe.Toast;
+import justtobesafe.toast.Toast;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.random.RandomHandler;
 import justtobesafe.activity.ActivityHandler;
+import justtobesafe.activity.ActivityLocations;
 
 public class HomeMenuController {
-
-    private String loginActivity_location="/justtobesafe/login/login_activity.fxml";
-    private String accountMenu_location="/justtobesafe/accountmenu/accountmenu_activity.fxml";
-    private String cardMenu_location="/justtobesafe/cardmenu/cardmenu_activity.fxml";
-    private String settingsMenu_location="/justtobesafe/settingsmenu/settingsmenu_activity.fxml";
 
     RandomHandler randomHandler=new RandomHandler();
     EncryptionHandler encryptionHandler=new EncryptionHandler();
@@ -28,37 +23,29 @@ public class HomeMenuController {
     final Clipboard clipboard = Clipboard.getSystemClipboard();
     final ClipboardContent content = new ClipboardContent();
 
-
     @FXML private AnchorPane HomeMenu;
     @FXML private TextField input_field;
     @FXML private TextField output_field;
-    @FXML private Button generateBtn;
-    @FXML private Button resetBtn;
-    @FXML private Button copyBtn;
-    @FXML private Button cardBtn;
-    @FXML private Button accountBtn;
-    @FXML private Button settingsBtn;
-    @FXML private Button logoutBtn;
 
     //Click Accounts & Passwords button
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(accountMenu_location);
+        activityHandler.loadActivity(ActivityLocations.accountMenu);
     }
     //Click Settings button
     public void onSettingsButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.loadActivity(settingsMenu_location);
         activityHandler.closeStage(HomeMenu);
+        activityHandler.loadActivity(ActivityLocations.settingsMenu);
     }
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(cardMenu_location);
+        activityHandler.loadActivity(ActivityLocations.cardMenu);
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(loginActivity_location);
+        activityHandler.loadActivity(ActivityLocations.loginActivity);
     }
     //Click Generate Random Passwords with hashing
     public void onGenerateButtonClicked(MouseEvent mouseEvent) {
