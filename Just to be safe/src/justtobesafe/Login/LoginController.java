@@ -2,19 +2,15 @@ package justtobesafe.login;
 
 // JAVA FX Imports
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 // JAVA imports
-import java.io.IOException;
 // Other imports
+import justtobesafe.activity.ActivityHandler;
 import justtobesafe.encryption.EncryptionHandler;
 
 
@@ -24,9 +20,13 @@ public class LoginController {
     private PasswordField password;
     @FXML
     private Label pswd_warning;
+    @FXML
+    private AnchorPane LoginMenu;
 
     EncryptionHandler encryptionHandler=new EncryptionHandler();
+    ActivityHandler activityHandler=new ActivityHandler();
     String file = "src/resources/passwd/passwd";
+    String homeMenu_location = "/justtobesafe/homemenu/homemenu_activity.fxml";
 
     //Login Related Functions
     //Authenticate password when user presses "Enter" key after typing in password field
@@ -52,37 +52,17 @@ public class LoginController {
         if(pswd.equals(passwd)){
             //pswd_warning.setText("Access Granted");
             //password.setText("");
-            closeStage();
-            loadHomeMenu();
+            activityHandler.closeStage(LoginMenu);
+            activityHandler.loadActivity(homeMenu_location);
         }else{
             pswd_warning.setText("Access Denied");
             password.setText("");
         }
     }
 
-
     //MISC functions
-
     public void PSWDFieldOnclick(MouseEvent mouseEvent) {
         pswd_warning.setText("");
         password.setPromptText("Enter Password");
-    }
-
-    private void closeStage() {
-        ((Stage) password.getScene().getWindow()).close();
-    }
-
-    private void loadHomeMenu() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/justtobesafe/homemenu/homemenu_activity.fxml"));
-            Stage primaryStage = new Stage();
-            primaryStage.setTitle("Just to be safe");
-            primaryStage.getIcons().add(new Image("/resources/icon_inverse.png"));
-            primaryStage.setScene(new Scene(root));
-            primaryStage.setResizable(false);
-            primaryStage.show();
-        }
-        catch (IOException ex) {
-        }
     }
 }
