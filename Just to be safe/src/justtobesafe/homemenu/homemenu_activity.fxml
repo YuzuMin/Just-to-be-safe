@@ -5,7 +5,7 @@
 
 <AnchorPane fx:id="HomeMenu" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.homemenu.HomeMenuController">
    <children>
-      <Button layoutX="323.0" layoutY="343.0" mnemonicParsing="false"  onMouseClicked="#onSettingsButtonClicked" prefHeight="39.0" prefWidth="239.0" styleClass="card-button" text="Settings" />
+      <Button layoutX="323.0" layoutY="343.0" mnemonicParsing="false" onMouseClicked="#onSettingsButtonClicked" prefHeight="39.0" prefWidth="239.0" styleClass="card-button" text="Settings" />
       <Button layoutX="323.0" layoutY="179.0" mnemonicParsing="false" onMouseClicked="#onAccountButtonClicked" prefHeight="148.0" prefWidth="239.0" styleClass="card-button" text="Accounts &amp; Passwords" />
       <Button layoutX="323.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onCardButtonClicked" prefHeight="148.0" prefWidth="239.0" styleClass="card-button" text="Credit Cards" />
       <AnchorPane layoutX="29.0" layoutY="19.0" prefHeight="363.0" prefWidth="239.0" styleClass="upper-layer">
@@ -15,8 +15,9 @@
             <TextField layoutX="20.0" layoutY="88.0" styleClass="text-field" />
             <Label layoutX="20.0" layoutY="136.0" text="Output:" />
             <TextField layoutX="20.0" layoutY="170.0" styleClass="text-field" />
-            <Button layoutX="15.0" layoutY="310.0" mnemonicParsing="false" styleClass="reg-button" text="Generate" />
-            <Button layoutX="135.0" layoutY="310.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" styleClass="reg-button" text="Clear" />
+            <Button layoutX="20.0" layoutY="310.0" mnemonicParsing="false" styleClass="reg-button" text="Generate" />
+            <Button layoutX="133.0" layoutY="310.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" styleClass="reg-button" text="Reset" />
+            <Button layoutX="20.0" layoutY="224.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="202.0" styleClass="reg-button" text="Copy to clipboard" />
          </children>
       </AnchorPane>
    </children>
