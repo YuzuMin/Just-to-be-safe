@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="justtobesafe.settingsmenu.SettingsMenuController"
-            stylesheets="@../../resources/dark-theme.css"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.settingsmenu.SettingsMenuController">
+    <children>
+    <Button fx:id="logoutBtn" layoutX="454.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
+    <Button fx:id="settingsBtn" layoutX="329.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onSettingsButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
+    <Button fx:id="accountBtn" layoutX="329.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#onAccountButtonClicked" prefHeight="148.0" prefWidth="239.0" styleClass="card-button" text="Accounts &amp; Passwords" />
+    <Button fx:id="cardBtn" layoutX="329.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#onCardButtonClicked" prefHeight="148.0" prefWidth="239.0" styleClass="card-button" text="Credit Cards" />
+    <AnchorPane layoutX="24.0" layoutY="19.0" prefHeight="362.0" prefWidth="276.0" styleClass="upper-layer">
+        <children>
+            <Label layoutX="77.0" layoutY="14.0" styleClass="title-label" text="Reset Password" />
+            <Label layoutX="23.0" layoutY="72.0" text="Enter New Password:" />
+            <TextField fx:id="input_field" layoutX="20.0" layoutY="106.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" />
+            <Label layoutX="23.0" layoutY="163.0" text="Re-enter New Password:" />
+            <TextField fx:id="output_field" layoutX="20.0" layoutY="198.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" />
+            <Button fx:id="passwdResetBtn" layoutX="20.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#onpasswdResetButtonClicked" prefHeight="39.0" prefWidth="239.0" styleClass="highlighted-button" text="Reset Password" />
+        </children>
+    </AnchorPane>
+    </children>
 </AnchorPane>
