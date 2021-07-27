@@ -57,6 +57,21 @@
     -fx-background-color: -fx-primary4;
 }
 
+.copy-button{
+    -fx-text-fill: -fx-darkporcelain;
+    -fx-background-color: Transparent;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 10pt;
+    -fx-underline: true;
+}
+.copy-button:hover{
+    -fx-text-fill: -fx-pimple_yellow;
+}
+.copy-button:pressed{
+    -fx-text-fill: -fx-darkporcelain;
+}
+
 .highlighted-button{
     -fx-text-fill: -fx-blvck;
     -fx-background-color: -fx-pimple_yellow;
