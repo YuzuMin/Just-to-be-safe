@@ -7,5 +7,6 @@ public class ActivityLocations {
     public static final String accountMenu="/justtobesafe/accountmenu/accountmenu_activity.fxml";
     public static final String cardMenu="/justtobesafe/cardmenu/cardmenu_activity.fxml";
     public static final String settingsMenu="/justtobesafe/settingsmenu/settingsmenu_activity.fxml";
+    public static final String passwd = "src/resources/passwd/passwd";
 
 }
