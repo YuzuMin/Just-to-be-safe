@@ -3,7 +3,8 @@ package justtobesafe.settingsmenu;
 import javafx.scene.input.MouseEvent;
 
 public class SettingsMenuController {
-    public void onpasswdResetButtonClicked(MouseEvent mouseEvent) {
+    public void onPasswdResetButtonClicked(MouseEvent mouseEvent) {
+        
     }
 
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
