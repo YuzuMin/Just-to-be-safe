@@ -3,7 +3,7 @@ package justtobesafe.encryption;
 import java.io.*;
 import java.security.MessageDigest;
 
-public class EncryptionHandler implements SecureHashingInterface,CaesarCipherInterface,MessageDigestInterface  {
+public class EncryptionHandler implements SecureHashingAlgorithmInterface,CaesarCipherInterface,MessageDigestInterface  {
 
     @Override
     public String sha1(String base) {
