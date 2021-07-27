@@ -165,4 +165,18 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
         return currentLine;
     }
 
+    public void writePasswordFile(String file,String passwd) {
+        try {
+            FileOutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            bufferedWriter.write(passwd);
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
