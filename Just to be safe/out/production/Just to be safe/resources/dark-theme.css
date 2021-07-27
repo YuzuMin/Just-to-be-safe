@@ -16,6 +16,7 @@
     -fx-blvck : #1f1f1f;
     -fx-black : #000000;
     -fx-porcelain : #f1f1f1;
+    -fx-darkporcelain : #E1E1E1;
     -fx-pimple_yellow : #FFFF8D;
 
     -fx-blue: #1976D2;
@@ -76,11 +77,17 @@
     -fx-border-radius: 8;
     -fx-background-radius:8;
     -fx-prompt-text-fill: -fx-porcelain;
+    -fx-border-color: -fx-primary;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-darkporcelain;
+    -fx-font-size : 12pt;
+}
+
+.text-field:focused{
+    -fx-prompt-text-fill: -fx-porcelain;
     -fx-border-color: -fx-pimple_yellow;
     -fx-background-color: -fx-primary;
     -fx-text-fill: -fx-pimple_yellow;
-    -fx-font-size : 12pt;
-    -jfx-focus-color: -fx-secondary;
 }
 
 .checkbox{
@@ -92,17 +99,24 @@
     -fx-border-radius: 8;
     -fx-background-radius:8;
     -fx-prompt-text-fill: -fx-porcelain;
+    -fx-border-color: -fx-primary3;
+    -fx-background-color: -fx-primary3;
+    -fx-text-fill: -fx-darkporcelain;
+    -fx-font-size : 12pt;
+}
+
+.pswd-field:focused{
+    -fx-prompt-text-fill: -fx-porcelain;
     -fx-border-color: -fx-pimple_yellow;
     -fx-background-color: -fx-primary3;
     -fx-text-fill: -fx-pimple_yellow;
-    -fx-font-size : 12pt;
-    -jfx-focus-color: -fx-secondary;
 }
+
 
 .label{
     -fx-text-alignment: center;
     -fx-font-size : 12pt;
-    -fx-text-fill: -fx-primarytext;
+    -fx-text-fill: -fx-darkporcelain;
 }
 
 .title-label{
