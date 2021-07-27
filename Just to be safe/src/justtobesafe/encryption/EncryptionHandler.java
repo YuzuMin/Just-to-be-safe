@@ -114,21 +114,6 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
         return temp.toString();
     }
 
-    public String readPasswordFile(String file) {
-        String currentLine=""; //Init value
-        try (BufferedReader reader = new BufferedReader
-                (new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
-            currentLine = reader.readLine();    //Obtain value from
-            reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            //return null;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return currentLine;
-    }
-
     @Override
     public String md2(String base) {
         try{
@@ -163,6 +148,21 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
         } catch(Exception ex){
             throw new RuntimeException(ex);
         }
+    }
+
+    public String readPasswordFile(String file) {
+        String currentLine=""; //Init value
+        try (BufferedReader reader = new BufferedReader
+                (new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
+            currentLine = reader.readLine();    //Obtain value from
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            //return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return currentLine;
     }
 
 }
