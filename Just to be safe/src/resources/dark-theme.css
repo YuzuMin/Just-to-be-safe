@@ -1,13 +1,20 @@
-/* 
-    Created on : 11 Nov, 2017, 4:42:53 AM
-    Author     : afsal villan
-*/
 
 * {
-    -fx-primary : #2A2E37;
+    /*Darker*/
+    -fx-primary1 : #090a0c;
+    -fx-primary2 : #14161a;
+    -fx-primary3 : #1f2229;
+    -fx-primary  : #2a2e37;
+    -fx-primary4 : #353a45;
+    -fx-primary5 : #404654;
+    -fx-primary5 : #4b5262;
+    /*Lighter*/
+
     -fx-secondary : #FFFF8D;
     -fx-primarytext : #B2B2B2;
+
     -fx-blvck : #1f1f1f;
+    -fx-black : #000000;
     -fx-porcelain : #f1f1f1;
     -fx-pimple_yellow : #FFFF8D;
 
@@ -20,32 +27,71 @@
     -fx-background-color: -fx-primary;
 }
 
+.upper-layer{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-background-color: -fx-primary4;
+}
+
 .glyph-icon
 {
     -fx-fill: -fx-primarytext;
 }
 
-.button{
+.reg-button{
     -fx-text-fill: -fx-primarytext;
-    -fx-background-color: -fx-primary;
+    -fx-background-color: -fx-primary4;
     -fx-border-color: -fx-secondary;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
 }
 
-.button:hover, .button:focused{
+.reg-button:hover, .reg-button:focused{
     -fx-border-color: -fx-secondary;
     -fx-background-color: -fx-secondary;
     -fx-text-fill: -fx-primary;
 }
 
-.text-field
-{
+.card-button{
     -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary4;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.card-button:hover{
+    -fx-border-color: -fx-secondary;
+    -fx-background-color: -fx-secondary;
+    -fx-text-fill: -fx-primary;
+}
+
+.card-button:pressed{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: -fx-primary4;
+}
+
+
+.text-field{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-prompt-text-fill: -fx-porcelain;
+    -fx-border-color: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-pimple_yellow;
     -fx-font-size : 12pt;
     -jfx-focus-color: -fx-secondary;
-    -fx-text-fill: derive(-fx-secondary, 20%);
+}
+
+.text-field:focused{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-prompt-text-fill: -fx-porcelain;
+    -fx-border-color: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-font-size : 12pt;
+    -jfx-focus-color: -fx-secondary;
 }
 
 .checkbox{
@@ -54,9 +100,11 @@
 
 .pswd-field
 {
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
     -fx-prompt-text-fill: -fx-porcelain;
     -fx-border-color: -fx-pimple_yellow;
-    -fx-background-color: -fx-blvck;
+    -fx-background-color: -fx-primary3;
     -fx-text-fill: -fx-pimple_yellow;
     -fx-font-size : 12pt;
     -jfx-focus-color: -fx-secondary;
@@ -67,6 +115,23 @@
     -fx-font-size : 12pt;
     -fx-text-fill: -fx-primarytext;
 }
+
+.title-label{
+    -fx-text-alignment: center;
+    -fx-font-size : 12pt;
+    -fx-text-fill: -fx-pimple_yellow;
+}
+
+.menu-layer{
+    -fx-background-color: -fx-blvck;
+}
+
+.menu-label{
+    -fx-text-alignment: center;
+    -fx-font-size : 10pt;
+    -fx-text-fill: -fx-porcelain;
+}
+
 /*Login Screen Specific*/
 .warning-label{
     -fx-text-fill: #EE0000;
