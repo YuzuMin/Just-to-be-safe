@@ -132,7 +132,7 @@ public class HomeMenuController {
         content.putString(output_field.getText());
         clipboard.setContent(content);
 
-        String toastMsg = "Copied to clipboard successfully";
+        String toastMsg = "Copied to clipboard";
         int toastMsgTime = 300; //1.5 seconds
         int fadeInTime = 100; //0.5 seconds
         int fadeOutTime= 100; //0.5 seconds
