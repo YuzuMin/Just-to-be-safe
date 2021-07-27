@@ -7,8 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-// Program Imports
 import javafx.stage.Stage;
+// Program Imports
 import justtobesafe.toast.Toast;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.random.RandomHandler;
@@ -18,7 +18,6 @@ import justtobesafe.activity.ActivityLocations;
 public class HomeMenuController {
 
     RandomHandler randomHandler=new RandomHandler();
-    EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
     final Clipboard clipboard = Clipboard.getSystemClipboard();
     final ClipboardContent content = new ClipboardContent();
