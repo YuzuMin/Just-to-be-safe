@@ -47,8 +47,8 @@ public class HomeMenuController {
     }
     //Click Settings button
     public void onSettingsButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(settingsMenu_location);
+        activityHandler.closeStage(HomeMenu);
     }
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
