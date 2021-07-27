@@ -18,6 +18,7 @@
     -fx-porcelain : #f1f1f1;
     -fx-darkporcelain : #E1E1E1;
     -fx-pimple_yellow : #FFFF8D;
+    -fx-pimple_yellow-translucent : #FFFF8DC0;
 
     -fx-blue: #1976D2;
     -fx-red: #FF0000;
@@ -40,35 +41,85 @@
 }
 
 .reg-button{
-    -fx-text-fill: -fx-primarytext;
+    -fx-text-fill: -fx-pimple_yellow;
     -fx-background-color: -fx-primary4;
-    -fx-border-color: -fx-secondary;
+    -fx-border-color: -fx-pimple_yellow;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
 }
+.reg-button:hover{
+    -fx-background-color: #FFFF8D20;
+    -fx-text-fill: -fx-pimple_yellow;
+}
+.reg-button:pressed{
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary4;
+}
 
-.reg-button:hover, .reg-button:focused{
-    -fx-border-color: -fx-secondary;
-    -fx-background-color: -fx-secondary;
-    -fx-text-fill: -fx-primary;
+.highlighted-button{
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary4;
+    -fx-border-color: -fx-pimple_yellow;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.highlighted-button:hover{
+    -fx-background-color: #FFFF8D20;
+    -fx-text-fill: -fx-pimple_yellow;
+}
+.highlighted-button:pressed{
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary4;
+}
+
+.login-button{
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-pimple_yellow;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.login-button:hover{
+    -fx-background-color: -fx-pimple_yellow;
+    -fx-text-fill: -fx-blvck;
+}
+.login-button:pressed{
+    -fx-text-fill: -fx-pimple_yellow;
+    -fx-background-color: -fx-primary;
+}
+
+.logout-button{
+    -fx-text-fill: -fx-porcelain;
+    -fx-background-color: #E83033;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.logout-button:hover{
+    -fx-background-color: #E8303366;
+    -fx-text-fill: -fx-porcelain;
+}
+.logout-button:pressed{
+    -fx-text-fill: -fx-porcelain;
+    -fx-background-color: #E83033;
 }
 
 .card-button{
-    -fx-text-fill: -fx-primarytext;
+    -fx-text-fill: -fx-pimple_yellow;
     -fx-background-color: -fx-primary4;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
 }
 .card-button:hover{
-    -fx-border-color: -fx-secondary;
-    -fx-background-color: -fx-secondary;
-    -fx-text-fill: -fx-primary;
+    -fx-background-color: -fx-pimple_yellow;
+    -fx-text-fill: -fx-blvck;
 }
-
 .card-button:pressed{
-    -fx-text-fill: -fx-primarytext;
+    -fx-text-fill: -fx-pimple_yellow;
     -fx-background-color: -fx-primary4;
 }
 
@@ -137,7 +188,7 @@
 
 /*Login Screen Specific*/
 .warning-label{
-    -fx-text-fill: #EE0000;
+    -fx-text-fill: #FC4332;
 }
 
 .wrong-credentials
