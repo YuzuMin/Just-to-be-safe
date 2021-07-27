@@ -1,6 +1,8 @@
 package justtobesafe.homemenu;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import justtobesafe.encryption.EncryptionHandler;
@@ -8,6 +10,8 @@ import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.activity.ActivityHandler;
 
 public class HomeMenuController {
+
+    private String loginActivity_location="/justtobesafe/login/login_activity.fxml";
     private String accountMenu_location="/justtobesafe/accountmenu/accountmenu_activity.fxml";
     private String cardMenu_location="/justtobesafe/cardmenu/cardmenu_activity.fxml";
     private String settingsMenu_location="/justtobesafe/settingsmenu/settingsmenu_activity.fxml";
@@ -15,8 +19,72 @@ public class HomeMenuController {
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
 
-    @FXML
-    AnchorPane HomeMenu;
+    @FXML private AnchorPane HomeMenu;
+    @FXML private TextField input_field;
+    @FXML private TextField output_field;
+    @FXML private Button generateBtn;
+    @FXML private Button resetBtn;
+    @FXML private Button copyBtn;
+    @FXML private Button cardBtn;
+    @FXML private Button accountBtn;
+    @FXML private Button settingsBtn;
+    @FXML private Button logoutBtn;
+    /*
+    //Generates Random Password
+    private String generateRandomPassword(String input){
+        String output=input;
+        int value1=(int)(Math.random()*(3));
+        int value2=(int)(Math.random()*(8));
+        int value3=(int)(Math.random()*(3));
+
+        switch(value1){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+
+        switch(value2){
+            case 0:
+                output=encryptionHandler.md2(output);
+                break;
+            case 1:
+                output=encryptionHandler.md4(output);
+                break;
+            case 2:
+                output=encryptionHandler.md5(output);
+                break;
+            case 3:
+                output=encryptionHandler.md6(output);
+                break;
+            case 4:
+                output=encryptionHandler.sha1(output);
+                break;
+            case 5:
+                output=encryptionHandler.sha256(output);
+                break;
+            case 6:
+                output=encryptionHandler.sha384(output);
+                break;
+            case 7:
+                output=encryptionHandler.sha512(output);
+                break;
+        }
+
+        switch(value3){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+
+        return output;
+    }
+     */
 
     //Click Accounts & Passwords button
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
@@ -32,5 +100,18 @@ public class HomeMenuController {
     public void onCardButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(cardMenu_location);
+    }
+    //Click Logout Button
+    public void onLogoutButtonClicked(MouseEvent mouseEvent) {
+        activityHandler.closeStage(HomeMenu);
+        activityHandler.loadActivity(loginActivity_location);
+    }
+
+    public void onGenerateButtonClicked(MouseEvent mouseEvent) {
+        String user_input=input_field.getText();
+        if(user_input.equals("")){
+
+
+        }
     }
 }
