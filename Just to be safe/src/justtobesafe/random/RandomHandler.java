@@ -25,6 +25,9 @@ public class RandomHandler {
             "Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe");
     List<String> farmAnimals= Arrays.asList("Cattle","Chicken","Sheep","Goat","Horse","Dog","Rabbit","Duck","Pig","Donkey","Horse");
     List<String> colors= Arrays.asList("white","yellow","blue","green","red","black","brown","purple","azure","orange","pink","navy");
+    List<String> actions= Arrays.asList("eats","hops","runs","jumps","swims","sits","stands","fights","plays","laughs","throws","catches");
+    List<String> musicGenres= Arrays.asList("rock","pop","jazz","folk","country","blues","lofi","soul","funk","metal","reggae","techno");
+    List<String> familyguy= Arrays.asList("Peter","Lois","Stewie","Meg","Chris","Quagmire","Brian","Adam","Joe","Herbert","Angela","Carter","Cleveland","Evil Monkey");
     //System.out.println(supplierNames.get(1));
 
     public String generateRandomString(){
@@ -32,27 +35,42 @@ public class RandomHandler {
         int length=(int)(Math.random()*(8));
         length+=3;
         for(int i=0;i<=length;i++){
-            int randomNum=(int)(Math.random()*(4));
+            int randomNum=(int)(Math.random()*(7));
             switch(randomNum){
                 case 0:
-                    int randomNum2=(int)(Math.random()*(phoneticAlphabet.size()));
-                    String data2=phoneticAlphabet.get(randomNum2);
-                    output=output+data2;
+                    int randomNum1=(int)(Math.random()*(phoneticAlphabet.size()));
+                    String data1=phoneticAlphabet.get(randomNum1);
+                    output=output+data1;
                     break;
                 case 1:
-                    int randomNum3=(int)(Math.random()*(countries.size()));
-                    String data3=countries.get(randomNum3);
-                    output=output+data3;
+                    int randomNum2=(int)(Math.random()*(countries.size()));
+                    String data2=countries.get(randomNum2);
+                    output=output+data2;
                     break;
                 case 2:
-                    int randomNum4=(int)(Math.random()*(farmAnimals.size()));
-                    String data4=farmAnimals.get(randomNum4);
-                    output=output+data4;
+                    int randomNum3=(int)(Math.random()*(farmAnimals.size()));
+                    String data3=farmAnimals.get(randomNum3);
+                    output=output+data3;
                     break;
                 case 3:
-                    int randomNum5=(int)(Math.random()*(colors.size()));
-                    String data5=colors.get(randomNum5);
+                    int randomNum4=(int)(Math.random()*(colors.size()));
+                    String data4=colors.get(randomNum4);
+                    output=output+data4;
+                    break;
+                case 4:
+                    int randomNum5=(int)(Math.random()*(actions.size()));
+                    String data5=actions.get(randomNum5);
                     output=output+data5;
+                    break;
+                case 5:
+                    int randomNum6=(int)(Math.random()*(musicGenres.size()));
+                    String data6=musicGenres.get(randomNum6);
+                    output=output+data6;
+                    break;
+                default:
+                    int randomNum7=(int)(Math.random()*(familyguy.size()));
+                    String data7=familyguy.get(randomNum7);
+                    output=output+data7;
                     break;
             }
         }
