@@ -58,8 +58,8 @@
 }
 
 .highlighted-button{
-    -fx-text-fill: -fx-pimple_yellow;
-    -fx-background-color: -fx-primary4;
+    -fx-text-fill: -fx-blvck;
+    -fx-background-color: -fx-pimple_yellow;
     -fx-border-color: -fx-pimple_yellow;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
@@ -70,8 +70,8 @@
     -fx-text-fill: -fx-pimple_yellow;
 }
 .highlighted-button:pressed{
-    -fx-text-fill: -fx-pimple_yellow;
-    -fx-background-color: -fx-primary4;
+    -fx-text-fill: -fx-blvck;
+    -fx-background-color: -fx-pimple_yellow;
 }
 
 .login-button{
