@@ -39,62 +39,6 @@ public class HomeMenuController {
     @FXML private Button accountBtn;
     @FXML private Button settingsBtn;
     @FXML private Button logoutBtn;
-    /*
-    //Generates Random Password
-    private String generateRandomPassword(String input){
-        String output=input;
-        int value1=(int)(Math.random()*(3));
-        int value2=(int)(Math.random()*(8));
-        int value3=(int)(Math.random()*(3));
-
-        switch(value1){
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-        }
-
-        switch(value2){
-            case 0:
-                output=encryptionHandler.md2(output);
-                break;
-            case 1:
-                output=encryptionHandler.md4(output);
-                break;
-            case 2:
-                output=encryptionHandler.md5(output);
-                break;
-            case 3:
-                output=encryptionHandler.md6(output);
-                break;
-            case 4:
-                output=encryptionHandler.sha1(output);
-                break;
-            case 5:
-                output=encryptionHandler.sha256(output);
-                break;
-            case 6:
-                output=encryptionHandler.sha384(output);
-                break;
-            case 7:
-                output=encryptionHandler.sha512(output);
-                break;
-        }
-
-        switch(value3){
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-        }
-
-        return output;
-    }
-     */
 
     //Click Accounts & Passwords button
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
@@ -133,7 +77,7 @@ public class HomeMenuController {
         clipboard.setContent(content);
 
         String toastMsg = "Copied to clipboard";
-        int toastMsgTime = 300; //1.5 seconds
+        int toastMsgTime = 500; //1.5 seconds
         int fadeInTime = 100; //0.5 seconds
         int fadeOutTime= 100; //0.5 seconds
         Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
