@@ -1,12 +1,14 @@
 package justtobesafe.homemenu;
 
+// Java FX imports
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+// Program Imports
 import justtobesafe.encryption.EncryptionHandler;
-
+import justtobesafe.random.RandomHandler;
 import justtobesafe.activity.ActivityHandler;
 
 public class HomeMenuController {
@@ -16,6 +18,7 @@ public class HomeMenuController {
     private String cardMenu_location="/justtobesafe/cardmenu/cardmenu_activity.fxml";
     private String settingsMenu_location="/justtobesafe/settingsmenu/settingsmenu_activity.fxml";
 
+    RandomHandler randomHandler=new RandomHandler();
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
 
@@ -106,12 +109,21 @@ public class HomeMenuController {
         activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(loginActivity_location);
     }
-
+    //Click Generate Random Passwords with hashing
     public void onGenerateButtonClicked(MouseEvent mouseEvent) {
         String user_input=input_field.getText();
-        if(user_input.equals("")){
-
-
+        String program_output="";
+        if(user_input.isBlank()){
+            output_field.setText("");
+            user_input= randomHandler.generateRandomString();
         }
+        program_output=randomHandler.generateRandomPassword(user_input);
+        output_field.setText(program_output);
+    }
+
+    public void onCopyButtonClicked(MouseEvent mouseEvent) {
+    }
+
+    public void onResetButtonClicked(MouseEvent mouseEvent) {
     }
 }
