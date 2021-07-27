@@ -13,12 +13,12 @@
          <children>
             <Label layoutX="49.0" layoutY="14.0" styleClass="title-label" text="Password Generator" />
             <Label layoutX="20.0" layoutY="54.0" text="Enter:" />
-            <TextField layoutX="20.0" layoutY="88.0" styleClass="text-field" />
+            <TextField fx:id="input_field"  layoutX="20.0" layoutY="88.0" styleClass="text-field" />
             <Label layoutX="20.0" layoutY="136.0" text="Output:" />
-            <TextField layoutX="20.0" layoutY="170.0" styleClass="text-field" />
-            <Button layoutX="20.0" layoutY="310.0" mnemonicParsing="false" styleClass="reg-button" text="Generate" />
-            <Button layoutX="133.0" layoutY="310.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" styleClass="reg-button" text="Reset" />
-            <Button layoutX="20.0" layoutY="224.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="202.0" styleClass="reg-button" text="Copy to clipboard" />
+            <TextField fx:id="output_field" layoutX="20.0" layoutY="170.0" styleClass="text-field" />
+            <Button fx:id="generateBtn" layoutX="20.0" layoutY="310.0" mnemonicParsing="false" styleClass="reg-button" text="Generate" onMouseClicked="#onGenerateButtonClicked" />
+            <Button fx:id="resetBtn" layoutX="133.0" layoutY="310.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" styleClass="reg-button" text="Reset" />
+            <Button fx:id="copyBtn" layoutX="20.0" layoutY="224.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="202.0" styleClass="reg-button" text="Copy to clipboard" />
          </children>
       </AnchorPane>
    </children>
