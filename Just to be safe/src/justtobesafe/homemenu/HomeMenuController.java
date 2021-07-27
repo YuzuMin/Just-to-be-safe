@@ -6,7 +6,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 // Program Imports
+import javafx.stage.Stage;
+import justtobesafe.Toast;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.random.RandomHandler;
 import justtobesafe.activity.ActivityHandler;
@@ -21,6 +25,9 @@ public class HomeMenuController {
     RandomHandler randomHandler=new RandomHandler();
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
+    final Clipboard clipboard = Clipboard.getSystemClipboard();
+    final ClipboardContent content = new ClipboardContent();
+
 
     @FXML private AnchorPane HomeMenu;
     @FXML private TextField input_field;
@@ -122,6 +129,14 @@ public class HomeMenuController {
     }
     //Click Copy to Clipboard Button
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
+        content.putString(output_field.getText());
+        clipboard.setContent(content);
+
+        String toastMsg = "Copied to clipboard successfully";
+        int toastMsgTime = 300; //1.5 seconds
+        int fadeInTime = 100; //0.5 seconds
+        int fadeOutTime= 100; //0.5 seconds
+        Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
     }
     //Click Reset Button
     public void onResetButtonClicked(MouseEvent mouseEvent) {
