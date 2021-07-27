@@ -120,10 +120,12 @@ public class HomeMenuController {
         program_output=randomHandler.generateRandomPassword(user_input);
         output_field.setText(program_output);
     }
-
+    //Click Copy to Clipboard Button
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
     }
-
+    //Click Reset Button
     public void onResetButtonClicked(MouseEvent mouseEvent) {
+        input_field.setText("");
+        output_field.setText("");
     }
 }
