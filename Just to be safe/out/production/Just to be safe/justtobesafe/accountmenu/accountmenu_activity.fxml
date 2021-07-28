@@ -6,10 +6,33 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="justtobesafe.accountmenu.AccountMenuController"
-            stylesheets="@../../resources/dark-theme.css"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane fx:id="AccountMenu" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="justtobesafe.accountmenu.AccountMenuController" stylesheets="@../../resources/dark-theme.css" prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Button fx:id="logoutBtn" layoutX="462.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
+        <Button fx:id="homeBtn" layoutX="337.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
+        <AnchorPane fx:id="cardBtn" layoutX="337.0" layoutY="19.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer">
+            <children>
+                <Label layoutX="45.0" layoutY="14.0" styleClass="title-label" text="Credit Card Database" />
+                <ListView layoutX="0.0" layoutY="45.0" prefHeight="263.0" prefWidth="239.0" styleClass="upper-layer">
 
+                </ListView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="23.0" layoutY="19.0" prefHeight="362.0" prefWidth="277.0" styleClass="upper-layer">
+            <children>
+                <Label layoutX="99.0" layoutY="14.0" styleClass="title-label" text="Credit Card" />
+                <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="151.0" prefWidth="247.0" styleClass="card-layer">
+                    <children>
+                        <TextField fx:id="cardName_field" layoutX="14.0" prefHeight="39.0" prefWidth="202.0" promptText="My Credit Card" styleClass="card-field" />
+                        <TextField fx:id="cardNum_field" layoutX="14.0" layoutY="39.0" prefHeight="39.0" prefWidth="181.0" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="card-field"/>
+                        <TextField fx:id="expiry_field" layoutX="14.0" layoutY="76.0" prefHeight="10.0" prefWidth="66.0" promptText="MM/YY" styleClass="card-field" />
+                        <TextField fx:id="cvv_field" layoutX="124.0" layoutY="76.0" prefHeight="32.0" prefWidth="43.0" promptText="888" styleClass="card-field" />
+                        <TextField fx:id="cardholder_field" layoutX="14.0" layoutY="108.0" prefHeight="39.0" prefWidth="94.0" promptText="John Doe" styleClass="card-field" />
+                    </children></AnchorPane>
+                <Button fx:id="setBtn" layoutX="20.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add Card" />
+                <Button fx:id="clearBtn" layoutX="144.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
+                <Button fx:id="copyBtn" layoutX="43.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
