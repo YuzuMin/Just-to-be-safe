@@ -42,9 +42,9 @@ public class LoginController {
     public void authenticatePSWD(){
         String passwd=encryptionHandler.readPasswordFile(ActivityLocations.passwd);         //retrieve data from passwd
         String pswd=password.getText();                                 //User Entered password
-        pswd=encryptionHandler.cc_encrypt(pswd);                        //Caesar Cipher Encrypt password
+        pswd=encryptionHandler.cc_encrypt(pswd,69,420);                        //Caesar Cipher Encrypt password
         pswd=encryptionHandler.sha512(pswd);                            //Hash Encrypted password using Secure Hashing Algorithm 512
-        pswd=encryptionHandler.cc_encrypt(pswd);                        //Caesar Cipher Encrypt Hashed password
+        pswd=encryptionHandler.cc_encrypt(pswd,69,420);                        //Caesar Cipher Encrypt Hashed password
 
         //System.out.println(pswd);
         //Compare password string with string from passwd file
