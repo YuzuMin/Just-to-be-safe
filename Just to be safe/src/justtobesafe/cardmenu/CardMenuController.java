@@ -43,6 +43,6 @@ public class CardMenuController {
     }
 
     public void cardnumOnKeyTyped(KeyEvent keyEvent) {
-        
+
     }
 }
