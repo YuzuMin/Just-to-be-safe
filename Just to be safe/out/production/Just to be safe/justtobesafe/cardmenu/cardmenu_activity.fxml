@@ -21,7 +21,7 @@
                 <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="151.0" prefWidth="247.0" styleClass="card-layer">
                <children>
                       <TextField fx:id="cardName_field" layoutX="14.0" prefHeight="39.0" prefWidth="202.0" promptText="My Credit Card" styleClass="card-field" />
-                      <TextField fx:id="cardNum_field" layoutX="14.0" layoutY="39.0" prefHeight="39.0" prefWidth="181.0" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="card-field" />
+                      <TextField fx:id="cardNum_field" layoutX="14.0" layoutY="39.0" prefHeight="39.0" prefWidth="181.0" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="card-field" onKeyTyped="#cardnumOnKeyTyped"/>
                       <TextField fx:id="expiry_field" layoutX="14.0" layoutY="76.0" prefHeight="10.0" prefWidth="66.0" promptText="MM/YY" styleClass="card-field" />
                       <TextField fx:id="cvv_field" layoutX="124.0" layoutY="76.0" prefHeight="32.0" prefWidth="43.0" promptText="888" styleClass="card-field" />
                       <TextField fx:id="cardholder_field" layoutX="14.0" layoutY="108.0" prefHeight="39.0" prefWidth="94.0" promptText="John Doe" styleClass="card-field" />
