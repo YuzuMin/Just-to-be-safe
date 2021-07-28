@@ -78,16 +78,16 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
     }
 
     @Override
-    public String cc_encrypt(String message) {
+    public String cc_encrypt(String message,int shift,int shift2) {
         StringBuilder temp = new StringBuilder();
 
         for(int i=0; i<message.length(); i++) {
-            char c = (char)(message.charAt(i) + 69);
+            char c = (char)(message.charAt(i) + shift);
 
             if(c >= 'x') {
-                c = (char)(message.charAt(i) - 420);
+                c = (char)(message.charAt(i) - shift2);
             } else {
-                c = (char)(message.charAt(i) + 69);
+                c = (char)(message.charAt(i) + shift);
             }
 
             temp.append(c);
@@ -97,16 +97,16 @@ public class EncryptionHandler implements SecureHashingAlgorithmInterface,Caesar
     }
 
     @Override
-    public String cc_decrypt(String message) {
+    public String cc_decrypt(String message,int shift,int shift2) {
         StringBuilder temp = new StringBuilder();
 
         for(int i=0; i<message.length(); i++) {
-            char c = (char)(message.charAt(i) - 69);
+            char c = (char)(message.charAt(i) - shift);
 
             if(c > 'x') {
-                c = (char)(message.charAt(i) + 420);
+                c = (char)(message.charAt(i) + shift2);
             } else {
-                c = (char)(message.charAt(i) - 69);
+                c = (char)(message.charAt(i) - shift);
             }
 
             temp.append(c);
