@@ -18,7 +18,7 @@
             <Label layoutX="22.0" layoutY="136.0" text="Output:" />
             <TextField fx:id="output_field" layoutX="19.0" layoutY="170.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" />
             <Button fx:id="generateBtn" layoutX="20.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onGenerateButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Generate" />
-            <Button fx:id="resetBtn" layoutX="144.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onResetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Reset" />
+            <Button fx:id="resetBtn" layoutX="144.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onResetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
             <Button fx:id="copyBtn" layoutX="37.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
          </children>
       </AnchorPane>
