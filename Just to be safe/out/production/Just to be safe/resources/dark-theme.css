@@ -35,6 +35,13 @@
     -fx-background-color: -fx-primary4;
 }
 
+.card-layer{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #FAFB55, #F47E56);
+}
+
+
 .glyph-icon
 {
     -fx-fill: -fx-primarytext;
@@ -155,6 +162,26 @@
     -fx-background-color: -fx-primary;
     -fx-text-fill: -fx-pimple_yellow;
 }
+
+.card-field{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: -fx-blvck;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-blvck;
+    -fx-font-size : 12pt;
+}
+
+.card-field:focused{
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: -fx-porcelain;
+    -fx-background-color: -fx-primary;
+    -fx-text-fill: -fx-pimple_yellow;
+}
+
+
+
 
 .checkbox{
     -fx-text-fill: -fx-pimple_yellow;
