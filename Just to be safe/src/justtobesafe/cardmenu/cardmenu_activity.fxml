@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="justtobesafe.cardmenu.CardMenuController"
-            stylesheets="@../../resources/dark-theme.css"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="CardMenu" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.cardmenu.CardMenuController">
+    <children>
+        <Button fx:id="logoutBtn" layoutX="462.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
+        <Button fx:id="homeBtn" layoutX="337.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
+        <AnchorPane fx:id="cardBtn" layoutX="337.0" layoutY="19.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer" />
+        <AnchorPane layoutX="24.0" layoutY="19.0" prefHeight="362.0" prefWidth="277.0" styleClass="upper-layer">
+            <children>
+                <Label layoutX="63.0" layoutY="14.0" styleClass="title-label" text="Credit Card Database" />
+                <Label layoutX="22.0" layoutY="53.0" prefHeight="25.0" prefWidth="47.0" text="Enter:" />
+                <TextField fx:id="input_field" layoutX="19.0" layoutY="86.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" />
+                <Label layoutX="22.0" layoutY="136.0" text="Output:" />
+                <TextField fx:id="output_field" layoutX="19.0" layoutY="170.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" />
+                <Button fx:id="setBtn" layoutX="20.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Generate" />
+                <Button fx:id="clearBtn" layoutX="144.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
+                <Button fx:id="copyBtn" layoutX="37.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
