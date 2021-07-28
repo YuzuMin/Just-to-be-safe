@@ -62,11 +62,7 @@ public class HomeMenuController {
         content.putString(output_field.getText());
         clipboard.setContent(content);
 
-        String toastMsg = "Copied to clipboard";
-        int toastMsgTime = 500; //1.5 seconds
-        int fadeInTime = 100; //0.5 seconds
-        int fadeOutTime= 100; //0.5 seconds
-        Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
+        Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), "Copied to clipboard", 500, 100, 100);
     }
     //Click Reset Button
     public void onResetButtonClicked(MouseEvent mouseEvent) {
