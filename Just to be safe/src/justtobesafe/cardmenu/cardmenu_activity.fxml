@@ -7,7 +7,13 @@
     <children>
         <Button fx:id="logoutBtn" layoutX="462.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="337.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
-        <AnchorPane fx:id="cardBtn" layoutX="337.0" layoutY="19.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer" />
+        <AnchorPane fx:id="cardBtn" layoutX="337.0" layoutY="19.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer" >
+            <children>
+                <ListView layoutX="0.0" layoutY="19.0" prefHeight="289.0" prefWidth="239.0" styleClass="upper-layer">
+
+                </ListView>
+            </children>
+        </AnchorPane>
         <AnchorPane layoutX="23.0" layoutY="19.0" prefHeight="362.0" prefWidth="277.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="63.0" layoutY="14.0" styleClass="title-label" text="Credit Card Database" />
