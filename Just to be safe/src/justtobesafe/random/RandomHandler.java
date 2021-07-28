@@ -33,8 +33,8 @@ public class RandomHandler {
     public String generateRandomString(){
         String output="";   //Declare and init output string
 
-        int length=(int)(Math.random()*(8));    //Generate random number
-        length+=3;
+        int length=(int)(Math.random()*(12));    //Generate random number
+        length+=4;
         //Loop and add data from different lists
         for(int i=0;i<=length;i++){
             int randomNum=(int)(Math.random()*(7));
@@ -86,7 +86,6 @@ public class RandomHandler {
         //Generate random number for caesar cipher operation
         int caeserCipher=(int)((Math.random()*(26))+1);
         int caeserCipherS=26-caeserCipher;
-
         //Generate random number to determine if the input string will be shifted
         int randomValue1=(int)(Math.random()*(3));
         switch(randomValue1){
@@ -139,7 +138,6 @@ public class RandomHandler {
             default:
                 break;
         }
-
         return output;
     }
 
