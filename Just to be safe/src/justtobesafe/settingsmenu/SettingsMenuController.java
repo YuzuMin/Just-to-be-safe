@@ -38,9 +38,9 @@ public class SettingsMenuController {
         }else{
             if(passwd.equals(confirmPasswd)){
                 try{
-                    String pswd = encryptionHandler.cc_encrypt(passwd);
+                    String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
                     pswd = encryptionHandler.sha512(pswd);
-                    pswd = encryptionHandler.cc_encrypt(pswd);
+                    pswd = encryptionHandler.cc_encrypt(pswd,69,420);
                     encryptionHandler.writePasswordFile(ActivityLocations.passwd,pswd);
                 }catch(Exception ex){
 
