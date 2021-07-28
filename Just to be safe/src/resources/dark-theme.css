@@ -168,9 +168,11 @@
     -fx-background-radius:8;
     -fx-border-color: transparent;
     -fx-prompt-text-fill: -fx-blvck;
+    -fx-prompt-text-weight: Bold;
     -fx-background-color: transparent;
     -fx-text-fill: -fx-blvck;
-    -fx-font-size : 12pt;
+    -fx-text-weight: Bold;
+    -fx-font-size : 10pt;
 }
 
 .card-field:focused{
