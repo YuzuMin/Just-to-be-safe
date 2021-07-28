@@ -2,6 +2,8 @@ package justtobesafe.cardmenu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -14,8 +16,10 @@ public class CardMenuController {
     ActivityHandler activityHandler = new ActivityHandler();
 
     @FXML private AnchorPane CardMenu;
+    @FXML private TextField cardNum_field;
     @FXML private Button setBtn;
     @FXML private Button clearBtn;
+
 
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -36,5 +40,9 @@ public class CardMenuController {
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
+    }
+
+    public void cardnumOnKeyTyped(KeyEvent keyEvent) {
+        
     }
 }
