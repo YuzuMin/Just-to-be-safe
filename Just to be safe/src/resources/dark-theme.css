@@ -172,7 +172,7 @@
     -fx-background-color: transparent;
     -fx-text-fill: -fx-blvck;
     -fx-text-weight: Bold;
-    -fx-font-size : 10pt;
+    -fx-font-size : 13pt;
 }
 
 .card-field:focused{
