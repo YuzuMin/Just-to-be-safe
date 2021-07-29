@@ -12,11 +12,11 @@ import java.io.IOException;
 
 public class ActivityHandler {
 
-    public void loadActivity(String activityLocation) {
+    public void loadActivity(String activityLocation,String title,String iconPath) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(activityLocation));
             Stage primaryStage = new Stage();
-            primaryStage.setTitle("Just to be safe");
+            primaryStage.setTitle(title);
             primaryStage.getIcons().add(new Image("/resources/icon_inverse.png"));
             primaryStage.setScene(new Scene(root));
             primaryStage.setResizable(false);
