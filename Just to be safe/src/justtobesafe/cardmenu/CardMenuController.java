@@ -6,11 +6,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
 import justtobesafe.activity.ActivityHandler;
-import justtobesafe.activity.ActivityLocations;
+import justtobesafe.activity.ActivityPaths;
+import justtobesafe.asset.AssetPaths;
 
 public class CardMenuController {
     ActivityHandler activityHandler = new ActivityHandler();
@@ -24,12 +22,12 @@ public class CardMenuController {
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(CardMenu);
-        activityHandler.loadActivity(ActivityLocations.loginActivity);
+        activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(CardMenu);
-        activityHandler.loadActivity(ActivityLocations.homeMenu);
+        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
