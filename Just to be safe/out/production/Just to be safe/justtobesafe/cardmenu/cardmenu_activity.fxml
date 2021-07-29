@@ -7,7 +7,7 @@
     <children>
         <Button fx:id="logoutBtn" layoutX="507.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="382.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
-        <AnchorPane fx:id="cardBtn" layoutX="382.0" layoutY="21.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer">
+        <AnchorPane fx:id="cardBtn" layoutX="382.0" layoutY="19.0" prefHeight="310.0" prefWidth="239.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="45.0" layoutY="14.0" styleClass="title-label" text="Credit Card Database" />
                 <ListView layoutY="45.0" prefHeight="335.0" prefWidth="239.0" styleClass="upper-layer">
@@ -15,7 +15,7 @@
                 </ListView>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="14.0" layoutY="22.0" prefHeight="437.0" prefWidth="348.0" styleClass="upper-layer">
+        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="437.0" prefWidth="348.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="106.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
                 <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="192.0" prefWidth="318.0" styleClass="card-layer">
@@ -28,7 +28,7 @@
                </children></AnchorPane>
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add Card" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
-                <Button fx:id="copyBtn" layoutX="73.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
+                <Button fx:id="copyBtn" layoutX="73.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
             </children>
         </AnchorPane>
     </children>
