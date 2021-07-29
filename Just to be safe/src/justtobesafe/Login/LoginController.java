@@ -57,6 +57,12 @@ public class LoginController {
         }
     }
 
+    public void onFunctionKeyPress(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
+            activityHandler.closeStage(LoginMenu);
+        }
+    }
+
     //MISC functions
     public void PSWDFieldOnclick(MouseEvent mouseEvent) {
         pswd_warning.setText("");
