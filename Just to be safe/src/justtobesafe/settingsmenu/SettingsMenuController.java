@@ -8,10 +8,10 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
-import justtobesafe.activity.ActivityLocations;
+import justtobesafe.activity.ActivityPaths;
+import justtobesafe.asset.AssetPaths;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.toast.Toast;
-import javax.swing.*;
 
 public class SettingsMenuController {
     ActivityHandler activityHandler=new ActivityHandler();
@@ -41,7 +41,7 @@ public class SettingsMenuController {
                     String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
                     pswd = encryptionHandler.sha512(pswd);
                     pswd = encryptionHandler.cc_encrypt(pswd,69,420);
-                    encryptionHandler.writePasswordFile(ActivityLocations.passwd,pswd);
+                    encryptionHandler.writePasswordFile(AssetPaths.passwd,pswd);
                 }catch(Exception ex){
 
                 }finally{
@@ -57,22 +57,22 @@ public class SettingsMenuController {
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityLocations.homeMenu);
+        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
     }
 
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityLocations.accountMenu);
+        activityHandler.loadActivity(ActivityPaths.accountMenu,AssetPaths.title, AssetPaths.icon);
     }
 
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityLocations.cardMenu);
+        activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title, AssetPaths.icon);
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityLocations.loginActivity);
+        activityHandler.loadActivity(ActivityPaths.loginActivity,AssetPaths.title, AssetPaths.icon);
     }
 }
