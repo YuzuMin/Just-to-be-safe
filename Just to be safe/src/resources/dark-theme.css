@@ -17,6 +17,7 @@
     -fx-black : #000000;
     -fx-porcelain : #f1f1f1;
     -fx-darkporcelain : #E1E1E1;
+    -fx-verydarkporcelain : #B1B1B1;
     -fx-pimple_yellow : #FFFF8D;
     -fx-pimple_yellow-translucent : #FFFF8DC0;
 
@@ -149,10 +150,10 @@
 .text-field{
     -fx-border-radius: 8;
     -fx-background-radius:8;
-    -fx-prompt-text-fill: -fx-porcelain;
+    -fx-prompt-text-fill: -fx-verydarkporcelain;
     -fx-border-color: -fx-primary;
     -fx-background-color: -fx-primary;
-    -fx-text-fill: -fx-darkporcelain;
+    -fx-text-fill: -fx-porcelain;
     -fx-font-size : 12pt;
 }
 
