@@ -4,7 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import justtobesafe.activity.ActivityHandler;
-import justtobesafe.activity.ActivityLocations;
+import justtobesafe.activity.ActivityPaths;
+import justtobesafe.asset.AssetPaths;
 
 public class AccountMenuController {
     ActivityHandler activityHandler = new ActivityHandler();
@@ -15,12 +16,12 @@ public class AccountMenuController {
     
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(AccountMenu);
-        activityHandler.loadActivity(ActivityLocations.loginActivity);
+        activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(AccountMenu);
-        activityHandler.loadActivity(ActivityLocations.homeMenu);
+        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
