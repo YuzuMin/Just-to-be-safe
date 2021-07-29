@@ -17,7 +17,7 @@ public class ActivityHandler {
             Parent root = FXMLLoader.load(getClass().getResource(activityLocation));
             Stage primaryStage = new Stage();
             primaryStage.setTitle(title);
-            primaryStage.getIcons().add(new Image("/resources/icon_inverse.png"));
+            primaryStage.getIcons().add(new Image(iconPath));
             primaryStage.setScene(new Scene(root));
             primaryStage.setResizable(false);
             primaryStage.show();
