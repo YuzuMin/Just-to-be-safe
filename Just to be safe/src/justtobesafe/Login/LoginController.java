@@ -11,7 +11,8 @@ import javafx.scene.input.MouseEvent;
 // Other imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.encryption.EncryptionHandler;
-import justtobesafe.activity.ActivityLocations;
+import justtobesafe.activity.ActivityPaths;
+import justtobesafe.asset.AssetPaths;
 
 
 
@@ -40,7 +41,7 @@ public class LoginController {
     }
     //Authenticate password
     public void authenticatePSWD(){
-        String passwd=encryptionHandler.readPasswordFile(ActivityLocations.passwd);         //retrieve data from passwd
+        String passwd=encryptionHandler.readPasswordFile(AssetPaths.passwd);         //retrieve data from passwd
         String pswd=password.getText();                                                     //User Entered password
         pswd=encryptionHandler.cc_encrypt(pswd,69,420);                        //Caesar Cipher Encrypt password
         pswd=encryptionHandler.sha512(pswd);                                                //Hash Encrypted password using Secure Hashing Algorithm 512
@@ -49,7 +50,7 @@ public class LoginController {
         //Compare password string with string from passwd file
         if(pswd.equals(passwd)){
             activityHandler.closeStage(LoginMenu);
-            activityHandler.loadActivity(ActivityLocations.homeMenu);
+            activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
         }else{
             pswd_warning.setText("Access Denied");
             password.setText("");
