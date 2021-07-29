@@ -9,11 +9,11 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
 // Program Imports
+import justtobesafe.asset.AssetPaths;
 import justtobesafe.toast.Toast;
-import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.random.RandomHandler;
 import justtobesafe.activity.ActivityHandler;
-import justtobesafe.activity.ActivityLocations;
+import justtobesafe.activity.ActivityPaths;
 
 public class HomeMenuController {
 
@@ -29,22 +29,22 @@ public class HomeMenuController {
     //Click Accounts & Passwords button
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(ActivityLocations.accountMenu);
+        activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
     }
     //Click Settings button
     public void onSettingsButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(ActivityLocations.settingsMenu);
+        activityHandler.loadActivity(ActivityPaths.settingsMenu,AssetPaths.title, AssetPaths.icon);
     }
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(ActivityLocations.cardMenu);
+        activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title, AssetPaths.icon);
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(ActivityLocations.loginActivity);
+        activityHandler.loadActivity(ActivityPaths.loginActivity,AssetPaths.title, AssetPaths.icon);
     }
     //Click Generate Random Passwords with hashing
     public void onGenerateButtonClicked(MouseEvent mouseEvent) {
