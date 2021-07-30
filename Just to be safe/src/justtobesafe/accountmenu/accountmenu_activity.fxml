@@ -9,7 +9,7 @@
         <Button fx:id="homeBtn" layoutX="377.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
         <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="381.0" prefWidth="240.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="55.0" layoutY="14.0" styleClass="title-label" text="Account Database" />
+                <Label layoutX="55.0" layoutY="14.0" text="Account Database" />
                 <ListView layoutX="0.0" layoutY="45.0" prefHeight="263.0" prefWidth="239.0" styleClass="upper-layer">
 
                 </ListView>
@@ -17,7 +17,7 @@
         </AnchorPane>
         <AnchorPane layoutX="15.0" layoutY="20.0" prefHeight="440.0" prefWidth="348.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="102.0" layoutY="14.0" styleClass="title-label" text="Account &amp; Password" />
+                <Label layoutX="83.0" layoutY="14.0" styleClass="title-label" text="Account &amp; Password" />
                 <TextField fx:id="site_field" layoutX="110.0" layoutY="72.0" prefHeight="39.0" prefWidth="223.0" promptText="Shopping Site" />
                 <Label layoutX="14.0" layoutY="79.0" text="Site Name:" />
                 <TextField fx:id="link_field" layoutX="110.0" layoutY="126.0" prefHeight="39.0" prefWidth="223.0" promptText="www.shopping.com" />
