@@ -157,7 +157,6 @@
     -fx-font-size : 12pt;
 }
 
-
 .card-field{
     -fx-border-radius: 8;
     -fx-background-radius:8;
@@ -176,9 +175,6 @@
     -fx-background-color: -fx-primary;
     -fx-text-fill: -fx-pimple_yellow;
 }
-
-
-
 
 .checkbox{
     -fx-text-fill: -fx-pimple_yellow;
