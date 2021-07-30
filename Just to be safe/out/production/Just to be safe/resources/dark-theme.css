@@ -217,7 +217,8 @@
 
 .title-label{
     -fx-text-alignment: center;
-    -fx-font-size : 12pt;
+    -fx-font-size : 14pt;
+    -fx-font-weight : bold;
     -fx-text-fill: -fx-pimple_yellow;
 }
 
