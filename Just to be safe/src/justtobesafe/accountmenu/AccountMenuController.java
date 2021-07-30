@@ -6,10 +6,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.data.DataHandler;
+import justtobesafe.toast.Toast;
 
 public class AccountMenuController {
     ActivityHandler activityHandler = new ActivityHandler();
@@ -41,8 +43,9 @@ public class AccountMenuController {
         String Password=pswd_field.getText()+"\n";
 
         String data=Site+Link+Email+Password;
-
         dataHandler.writeCsvFile(AssetPaths.acctCSV,data);
+
+        Toast.makeText(((Stage) AccountMenu.getScene().getWindow()),"Account Added Successfully",100,500,100);
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
