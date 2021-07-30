@@ -3,7 +3,7 @@ package justtobesafe.data;
 import java.util.UUID;
 
 public abstract class DataObject {
-    UUID uuid;
-    String UniqueIdentifier;
-    String ObjectName;
+    //protected UUID uuid;
+    protected String UniqueIdentifier;
+    protected String DisplayName;
 }
