@@ -37,6 +37,23 @@ public class DataHandler implements FileInterface, CsvInterface{
 
     @Override
     public String[] readCsvFile(String file) {
+
+        String currentLine=""; //Init value
+        try (BufferedReader reader = new BufferedReader
+                (new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
+            while((currentLine = reader.readLine() ) != null){
+                System.out.println(currentLine);
+            }
+            //currentLine = reader.readLine();    //Obtain value from
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            //return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         String s = "972456,972456,972456";
         String[] values = s.split(",");
         System.out.println(values[0]);
