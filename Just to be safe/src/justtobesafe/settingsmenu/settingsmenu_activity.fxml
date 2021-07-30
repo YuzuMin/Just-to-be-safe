@@ -13,9 +13,9 @@
         <children>
             <Label layoutX="27.0" layoutY="14.0" styleClass="title-label,warning-label" text="Warning: Reset Password" />
             <Label layoutX="23.0" layoutY="72.0" text="Enter New Password:" />
-            <TextField fx:id="passwd_field" layoutX="19.0" layoutY="100.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" onMouseClicked="onTextFieldClicked" />
+            <TextField fx:id="passwd_field" layoutX="19.0" layoutY="100.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" onMouseClicked="#onTextFieldClicked" />
             <Label layoutX="23.0" layoutY="163.0" text="Re-enter New Password:" />
-            <TextField fx:id="passwd_reenter_field" layoutX="20.0" layoutY="191.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" onMouseClicked="onTextFieldClicked" />
+            <TextField fx:id="passwd_reenter_field" layoutX="20.0" layoutY="191.0" prefHeight="39.0" prefWidth="239.0" styleClass="text-field" onMouseClicked="#onTextFieldClicked" />
             <Label fx:id="pswd_warning" layoutX="48.0" layoutY="252.0" prefHeight="25.0" prefWidth="180.0" styleClass="warning-label" text="" />
             <Label fx:id="pswd_warning1" layoutX="68.0" layoutY="252.0" prefHeight="25.0" prefWidth="140.0" styleClass="warning-label" text="" />
             <Label fx:id="pswd_warning2" layoutX="55.5" layoutY="252.0" prefHeight="25.0" prefWidth="165.0" styleClass="warning-label" text="" />
