@@ -40,6 +40,9 @@ public class AccountMenuController {
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
+
+        dataHandler.readCsvFile(AssetPaths.acctCSV);
+
         if(site_field.getText().isBlank()){
             site_field.setText("");
             warning1.setText("Site Name Empty");
