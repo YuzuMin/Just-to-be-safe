@@ -99,4 +99,9 @@ public class AccountMenuController {
             activityHandler.closeStage(AccountMenu);
         }
     }
+
+    public void onTextFieldClicked(MouseEvent mouseEvent) {
+        warning1.setText("");
+        warning2.setText("");
+    }
 }
