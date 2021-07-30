@@ -13,13 +13,13 @@ import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.encryption.EncryptionHandler;
-import justtobesafe.reader.FileReader;
+import justtobesafe.data.DataHandler;
 import justtobesafe.toast.Toast;
 
 public class SettingsMenuController {
     ActivityHandler activityHandler=new ActivityHandler();
     EncryptionHandler encryptionHandler=new EncryptionHandler();
-    FileReader fileReader=new FileReader();
+    DataHandler dataHandler =new DataHandler();
 
     @FXML private AnchorPane SettingsMenu;
     @FXML private Label pswd_warning;
@@ -45,7 +45,7 @@ public class SettingsMenuController {
                     String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
                     pswd = encryptionHandler.sha512(pswd);
                     pswd = encryptionHandler.cc_encrypt(pswd,69,420);
-                    fileReader.writeFile(AssetPaths.passwd,pswd);
+                    dataHandler.writeFile(AssetPaths.passwd,pswd);
                 }catch(Exception ex){
 
                 }finally{
