@@ -1,6 +1,8 @@
 package justtobesafe.accountmenu;
 
 import javafx.fxml.FXML;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import justtobesafe.activity.ActivityHandler;
@@ -30,6 +32,19 @@ public class AccountMenuController {
     public void onClearButtonClicked(MouseEvent mouseEvent) {
     }
 
-    public void onCopyButtonClicked(MouseEvent mouseEvent) {
+    public void onFunctionKeyPress(KeyEvent keyEvent) {
+        if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
+            activityHandler.loadActivity(ActivityPaths.decoyActivity,AssetPaths.decoyTitle,AssetPaths.decoyIcon);
+            activityHandler.closeStage(AccountMenu);
+        }else if (keyEvent.getCode().equals(KeyCode.F1)) {
+            activityHandler.loadActivity(ActivityPaths.homeMenu, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
+        }else if (keyEvent.getCode().equals(KeyCode.F2)) {
+            activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
+        }else if (keyEvent.getCode().equals(KeyCode.F4)) {
+            activityHandler.loadActivity(ActivityPaths.settingsMenu,AssetPaths.title,AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
+        }
     }
 }
