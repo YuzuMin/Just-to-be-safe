@@ -36,9 +36,12 @@ public class DataHandler implements FileInterface, CsvInterface{
     }
 
     @Override
-    public String readCsvFile(String file) {
+    public String[] readCsvFile(String file) {
+        String s = "972456,972456,972456";
+        String[] values = s.split(",");
+        System.out.println(values[0]);
         System.out.println("readCSVFile");
-        return "";
+        return values;
     }
 
     @Override
