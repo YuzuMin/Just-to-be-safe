@@ -52,6 +52,7 @@ public class DecoyController {
                     e.printStackTrace();
                 }
             }
+            activityHandler.closeStage(DecoyMenu);
         }
     }
 }
