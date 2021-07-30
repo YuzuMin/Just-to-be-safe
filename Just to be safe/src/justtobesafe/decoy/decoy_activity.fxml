@@ -11,6 +11,6 @@
             <Image url="@../../resources/google.png" />
          </image>
       </ImageView>
-      <TextField layoutX="170.0" layoutY="221.0" prefHeight="39.0" prefWidth="300.0" />
+      <TextField layoutX="170.0" layoutY="221.0" prefHeight="39.0" prefWidth="300.0" promptText="Search Google or type a URL" />
    </children>
 </AnchorPane>
