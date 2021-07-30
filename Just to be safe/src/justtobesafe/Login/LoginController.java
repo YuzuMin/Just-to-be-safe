@@ -60,6 +60,8 @@ public class LoginController {
     public void onFunctionKeyPress(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
             activityHandler.closeStage(LoginMenu);
+        }else if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            authenticatePSWD();
         }
     }
 
