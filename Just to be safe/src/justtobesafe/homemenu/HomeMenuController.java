@@ -59,7 +59,6 @@ public class HomeMenuController {
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
         content.putString(output_field.getText());
         clipboard.setContent(content);
-
         Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), "Copied to clipboard", 500, 100, 100);
     }
     //Click Reset Button
