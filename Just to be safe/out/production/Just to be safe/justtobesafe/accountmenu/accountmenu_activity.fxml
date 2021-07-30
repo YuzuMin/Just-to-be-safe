@@ -26,8 +26,10 @@
                 <Label layoutX="14.0" layoutY="187.0" text="Email/User:" />
                 <TextField fx:id="pswd_field" layoutX="110.0" layoutY="234.0" prefHeight="39.0" prefWidth="223.0" promptText="Password" />
                 <Label layoutX="14.0" layoutY="241.0" text="Password:" />
-                <Button fx:id="setBtn" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add Card" />
+                <Button fx:id="setBtn" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
+            <Label fx:id="warning1" layoutX="113.0" layoutY="296.0" text="" styleClass="warning-label"/>
+            <Label fx:id="warning2" layoutX="120.0" layoutY="296.0" text="" styleClass="warning-label"/>
             </children>
         </AnchorPane>
     </children>
