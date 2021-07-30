@@ -72,9 +72,6 @@ public class HomeMenuController {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
             activityHandler.loadActivity(ActivityPaths.decoyActivity,AssetPaths.decoyTitle,AssetPaths.decoyIcon);
             activityHandler.closeStage(HomeMenu);
-        }else if (keyEvent.getCode().equals(KeyCode.F1)) {
-            activityHandler.loadActivity(ActivityPaths.homeMenu, AssetPaths.title, AssetPaths.icon);
-            activityHandler.closeStage(HomeMenu);
         }else if (keyEvent.getCode().equals(KeyCode.F2)) {
                 activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
                 activityHandler.closeStage(HomeMenu);
