@@ -49,7 +49,7 @@ public class SettingsMenuController {
                 }catch(Exception ex){
 
                 }finally{
-                    Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500, 100, 100);
+                    Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
                 }
             }else{
                 pswd_warning.setText("");
@@ -57,6 +57,12 @@ public class SettingsMenuController {
                 pswd_warning2.setText("Passwords don't match");
             }
         }
+    }
+
+    public void onTextFieldClicked(MouseEvent mouseEvent) {
+        pswd_warning.setText("");
+        pswd_warning1.setText("");
+        pswd_warning2.setText("");
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
