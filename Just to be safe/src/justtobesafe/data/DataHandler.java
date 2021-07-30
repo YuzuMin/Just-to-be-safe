@@ -44,7 +44,7 @@ public class DataHandler implements FileInterface, CsvInterface{
     @Override
     public void writeCsvFile(String file,String inputString) {
         try {
-            FileOutputStream outputStream = new FileOutputStream(file);
+            FileOutputStream outputStream = new FileOutputStream(file,true);
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
