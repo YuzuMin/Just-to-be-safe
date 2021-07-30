@@ -9,7 +9,7 @@
         <Button fx:id="homeBtn" layoutX="380.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
         <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="381.0" prefWidth="240.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="45.0" layoutY="14.0" styleClass="title-label" text="Credit Card Database" />
+                <Label layoutX="45.0" layoutY="14.0" text="Credit Card Database" />
                 <ListView layoutY="45.0" prefHeight="335.0" prefWidth="239.0" styleClass="upper-layer">
 
                 </ListView>
@@ -17,7 +17,7 @@
         </AnchorPane>
         <AnchorPane layoutX="15.0" layoutY="20.0" prefHeight="440.0" prefWidth="348.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="106.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
+                <Label layoutX="90.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
                 <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="192.0" prefWidth="318.0" styleClass="card-layer">
                <children>
                       <TextField fx:id="cardName_field" layoutY="8.0" prefHeight="40.0" prefWidth="318.0" promptText="My Credit Card" styleClass="card-field" />
