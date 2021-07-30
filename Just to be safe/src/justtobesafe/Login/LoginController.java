@@ -13,7 +13,7 @@ import justtobesafe.activity.ActivityHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.asset.AssetPaths;
-import justtobesafe.reader.FileReader;
+import justtobesafe.data.DataHandler;
 
 
 public class LoginController {
@@ -26,7 +26,7 @@ public class LoginController {
 
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
-    FileReader fileReader=new FileReader();
+    DataHandler dataHandler =new DataHandler();
     //String file = "src/resources/passwd/passwd";
 
     //Login Related Functions
@@ -42,7 +42,7 @@ public class LoginController {
     }
     //Authenticate password
     public void authenticatePSWD(){
-        String passwd=fileReader.readFile(AssetPaths.passwd);         //retrieve data from passwd
+        String passwd= dataHandler.readFile(AssetPaths.passwd);         //retrieve data from passwd
         String pswd=password.getText();                                                     //User Entered password
         pswd=encryptionHandler.cc_encrypt(pswd,69,420);                        //Caesar Cipher Encrypt password
         pswd=encryptionHandler.sha512(pswd);                                                //Hash Encrypted password using Secure Hashing Algorithm 512
