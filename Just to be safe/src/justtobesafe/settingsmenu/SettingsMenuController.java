@@ -7,17 +7,19 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-
 import javafx.stage.Stage;
+
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.encryption.EncryptionHandler;
+import justtobesafe.reader.FileReader;
 import justtobesafe.toast.Toast;
 
 public class SettingsMenuController {
     ActivityHandler activityHandler=new ActivityHandler();
     EncryptionHandler encryptionHandler=new EncryptionHandler();
+    FileReader fileReader=new FileReader();
 
     @FXML private AnchorPane SettingsMenu;
     @FXML private Label pswd_warning;
@@ -43,7 +45,7 @@ public class SettingsMenuController {
                     String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
                     pswd = encryptionHandler.sha512(pswd);
                     pswd = encryptionHandler.cc_encrypt(pswd,69,420);
-                    encryptionHandler.writePasswordFile(AssetPaths.passwd,pswd);
+                    fileReader.writeFile(AssetPaths.passwd,pswd);
                 }catch(Exception ex){
 
                 }finally{
