@@ -38,7 +38,7 @@ public class AccountMenuController {
         String Site=site_field.getText()+",";
         String Link=link_field.getText()+",";
         String Email=email_field.getText()+",";
-        String Password=pswd_field.getText();
+        String Password=pswd_field.getText()+"\n";
 
         String data=Site+Link+Email+Password;
 
