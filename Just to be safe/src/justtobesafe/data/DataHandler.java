@@ -2,7 +2,7 @@ package justtobesafe.data;
 
 import java.io.*;
 
-public class DataHandler implements FileInterface {
+public class DataHandler implements FileInterface, CsvInterface{
 
     @Override
     public String readFile(String file) {
@@ -33,5 +33,31 @@ public class DataHandler implements FileInterface {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String readCsvFile(String file) {
+        System.out.println("readCSVFile");
+        return "";
+    }
+
+    @Override
+    public void writeCsvFile(String file,String inputString) {
+        try {
+            FileOutputStream outputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            bufferedWriter.write(inputString);
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteCSVFile(String file) {
+        System.out.println("deleteCSVFile");
     }
 }
