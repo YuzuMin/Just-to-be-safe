@@ -1,7 +1,7 @@
 package justtobesafe.data;
 
 public interface CsvInterface {
-    public void readCsvFile(String location);
-    public void writeCsvFile(String location);
+    public String readCsvFile(String file);
+    public void writeCsvFile(String file,String inputString);
     public void deleteCSVFile(String location);
 }
