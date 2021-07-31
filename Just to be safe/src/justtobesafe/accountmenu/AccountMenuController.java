@@ -55,10 +55,12 @@ public class AccountMenuController implements Initializable {
         accountView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                int value =Character.getNumericValue(newValue.charAt(0));
+
+                String[] EAX =newValue.split(". ");
+                int value = Integer.parseInt(EAX[0]);
                 value--;
                 position=value;
-                System.out.println(value);
+
                 site_field.setText(accountList.get(value).getName());
                 link_field.setText(accountList.get(value).getLink());
                 email_field.setText(accountList.get(value).getEmail());
