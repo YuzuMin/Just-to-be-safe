@@ -2,6 +2,7 @@ package justtobesafe.accountmenu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -30,8 +31,12 @@ public class AccountMenuController {
     @FXML private TextField pswd_field;
     @FXML private Label warning1;
     @FXML private Label warning2;
+    @FXML private ListView<String> accountView;
 
     LinkedList<Account> accountList = new LinkedList<Account>();
+    LinkedList<String> accountListView = new LinkedList<String>();
+
+    //ListView<String> accountView = new ListView<String>();
 
     
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -113,15 +118,22 @@ public class AccountMenuController {
             account.setPassword(EAX[3]);
 
             accountList.add(account);
-            accountList.add(account);
+            accountListView.add(EAX[0]);
+            accountView.getItems().add(EAX[0]);
         }
 
-        Account acc = accountList.get(0);
-        System.out.println(acc.getName());
-        System.out.println(acc.getLink());
-        System.out.println(acc.getEmail());
-        System.out.println(acc.getPassword());
+        for(int i=0; i<accountList.size();i++){
+            Account acc = accountList.get(i);
+            System.out.println(acc.getName());
+            System.out.println(acc.getLink());
+            System.out.println(acc.getEmail());
+            System.out.println(acc.getPassword());
+        }
 
+        for(int i=0; i<accountListView.size();i++){
+            String BX = accountListView.get(i);
+            System.out.println(BX);
+        }
     }
 
     public void onFunctionKeyPress(KeyEvent keyEvent) {
