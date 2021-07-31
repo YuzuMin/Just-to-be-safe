@@ -4,11 +4,19 @@ public class Account extends DataObject{
     private String email;
     private String password;
 
+    public Account(String Name, String Link,String Email,String Password){
+        DisplayName = Name;
+        UniqueIdentifier = Link;
+        this.email = Email;
+        this.password = Password;
+    }
+
+
     public String getName(){
         return DisplayName;
     }
     public void setName(String Name){
-        this.DisplayName = Name;
+        DisplayName = Name;
     }
 
     public String getLink(){
