@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.asset.AssetPaths;
+import justtobesafe.data.Account;
 import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.toast.Toast;
@@ -29,6 +30,8 @@ public class AccountMenuController {
     @FXML private TextField pswd_field;
     @FXML private Label warning1;
     @FXML private Label warning2;
+
+    LinkedList<Account> accountList = new LinkedList<Account>();
 
     
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -51,26 +54,31 @@ public class AccountMenuController {
             warning1.setText("");
             warning2.setText("Site Link Empty");
         }else{
+            //Encrypt Site Name
             String Site=site_field.getText();
             Site=Site.replace(","," | ");
             Site=encryptionHandler.cc_encrypt(Site,69,420);
             Site=Site+",";
 
+            //Encrypt Site Link
             String Link=link_field.getText();
             Link=Link.replace(","," | ");
             Link=encryptionHandler.cc_encrypt(Link,70,421);
             Link=Link+",";
 
+            //Encrypt Email
             String Email=email_field.getText();
             Email=Email.replace(","," | ");
             Email=encryptionHandler.cc_encrypt(Email,71,422);
             Email=Email+",";
 
+            //Encrypt Password
             String Password=pswd_field.getText();
             Password=Password.replace(","," | ");
             Password=encryptionHandler.cc_encrypt(Password,72,423);
             Password=Password+"\n";
 
+            //Write as String
             String data=Site+Link+Email+Password;
             dataHandler.writeCsvFile(AssetPaths.acctCSV,data);
 
@@ -90,8 +98,6 @@ public class AccountMenuController {
 
     private void displayAccounts(){
         LinkedList<String> list = dataHandler.readCsvFile(AssetPaths.acctCSV);
-        System.out.println(list.getLast());
-        System.out.println(list.size());
         for(int i=0; i<list.size();i++){
             String[] EAX = list.get(i).split(",");
 
@@ -100,12 +106,22 @@ public class AccountMenuController {
             EAX[2]=encryptionHandler.cc_decrypt(EAX[2],71,422);
             EAX[3]=encryptionHandler.cc_decrypt(EAX[3],72,423);
 
+            Account account = new Account();
+            account.setName(EAX[0]);
+            account.setLink(EAX[1]);
+            account.setEmail(EAX[2]);
+            account.setPassword(EAX[3]);
 
-            System.out.println(EAX[0]);
-            System.out.println(EAX[1]);
-            System.out.println(EAX[2]);
-            System.out.println(EAX[3]);
+            accountList.add(account);
+            accountList.add(account);
         }
+
+        Account acc = accountList.get(0);
+        System.out.println(acc.getName());
+        System.out.println(acc.getLink());
+        System.out.println(acc.getEmail());
+        System.out.println(acc.getPassword());
+
     }
 
     public void onFunctionKeyPress(KeyEvent keyEvent) {
