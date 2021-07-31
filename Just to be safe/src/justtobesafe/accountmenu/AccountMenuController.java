@@ -15,6 +15,8 @@ import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.toast.Toast;
 
+import java.util.LinkedList;
+
 public class AccountMenuController {
     EncryptionHandler encryptionHandler = new EncryptionHandler();
     ActivityHandler activityHandler = new ActivityHandler();
@@ -40,9 +42,6 @@ public class AccountMenuController {
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
-
-        dataHandler.readCsvFile(AssetPaths.acctCSV);
-
         if(site_field.getText().isBlank()){
             site_field.setText("");
             warning1.setText("Site Name Empty");
@@ -54,22 +53,22 @@ public class AccountMenuController {
         }else{
             String Site=site_field.getText();
             Site=Site.replace(","," | ");
-            Site=encryptionHandler.cc_encrypt(Site,3,23);
+            Site=encryptionHandler.cc_encrypt(Site,69,420);
             Site=Site+",";
 
             String Link=link_field.getText();
             Link=Link.replace(","," | ");
-            Link=encryptionHandler.cc_encrypt(Link,4,22);
+            Link=encryptionHandler.cc_encrypt(Link,70,421);
             Link=Link+",";
 
             String Email=email_field.getText();
             Email=Email.replace(","," | ");
-            Email=encryptionHandler.cc_encrypt(Email,5,21);
+            Email=encryptionHandler.cc_encrypt(Email,71,422);
             Email=Email+",";
 
             String Password=pswd_field.getText();
             Password=Password.replace(","," | ");
-            Password=encryptionHandler.cc_encrypt(Password,6,20);
+            Password=encryptionHandler.cc_encrypt(Password,72,423);
             Password=Password+"\n";
 
             String data=Site+Link+Email+Password;
@@ -81,10 +80,32 @@ public class AccountMenuController {
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
+        displayAccounts();
+
         site_field.setText("");
         link_field.setText("");
         email_field.setText("");
         pswd_field.setText("");
+    }
+
+    private void displayAccounts(){
+        LinkedList<String> list = dataHandler.readCsvFile(AssetPaths.acctCSV);
+        System.out.println(list.getLast());
+        System.out.println(list.size());
+        for(int i=0; i<list.size();i++){
+            String[] EAX = list.get(i).split(",");
+
+            EAX[0]=encryptionHandler.cc_decrypt(EAX[0],69,420);
+            EAX[1]=encryptionHandler.cc_decrypt(EAX[1],70,421);
+            EAX[2]=encryptionHandler.cc_decrypt(EAX[2],71,422);
+            EAX[3]=encryptionHandler.cc_decrypt(EAX[3],72,423);
+
+
+            System.out.println(EAX[0]);
+            System.out.println(EAX[1]);
+            System.out.println(EAX[2]);
+            System.out.println(EAX[3]);
+        }
     }
 
     public void onFunctionKeyPress(KeyEvent keyEvent) {
