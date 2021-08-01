@@ -116,7 +116,7 @@
 
 .logout-button{
     -fx-text-fill: -fx-porcelain;
-    -fx-background-color: #E83033;
+    -fx-background-color: #D3171B;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
@@ -127,7 +127,7 @@
 }
 .logout-button:pressed{
     -fx-text-fill: -fx-porcelain;
-    -fx-background-color: #E83033;
+    -fx-background-color: #D3171B;
 }
 
 .card-button{
