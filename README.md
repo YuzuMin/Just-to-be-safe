@@ -1,2 +1,10 @@
 # Just to be safe
- A Digital Private Safe
+ A Digital Privacy Safe
+ 
+ LOGIN MENU CHECKED  
+ HOME MENU CHECKED  
+ SETTINGS MENU CHECKED  
+ DECOY MENU CHECKED  
+ 
+ CARD MENU  
+ ACCOUNT MENU  
