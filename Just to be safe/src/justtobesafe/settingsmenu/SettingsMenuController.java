@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
+import justtobesafe.alert.AlertPopup;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.data.DataHandler;
@@ -82,8 +83,14 @@ public class SettingsMenuController {
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityPaths.loginActivity,AssetPaths.title, AssetPaths.icon);
+        String displayText="Are you sure you want to logout now?";
+        String smallText="";
+        String displayTitle="Confirm Logout";
+        boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+        if(confirmed) {
+            activityHandler.closeStage(SettingsMenu);
+            activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+        }
     }
 
 
