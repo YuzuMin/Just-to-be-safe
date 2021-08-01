@@ -7,14 +7,17 @@
     <children>
         <Button fx:id="logoutBtn" layoutX="506.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="380.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
-        <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="381.0" prefWidth="240.0" styleClass="upper-layer">
+
+        <AnchorPane layoutX="380.0" layoutY="20.0" prefHeight="384.0" prefWidth="242.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="45.0" layoutY="14.0" text="Credit Card Database" />
-                <ListView layoutY="45.0" prefHeight="335.0" prefWidth="239.0" styleClass="upper-layer">
+                <Label layoutX="55.0" layoutY="14.0" text="Credit Card Database" />
+                <ListView fx:id="accountView" layoutX="1.0" layoutY="45.0" prefHeight="279.0" prefWidth="238.0" styleClass="upper-layer">
 
                 </ListView>
+                <Button fx:id="deleteBtn" defaultButton="true" layoutX="8.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#onDeleteButtonClicked" prefHeight="39.0" prefWidth="223.0" styleClass="logout-button" text="Delete" />
             </children>
         </AnchorPane>
+
         <AnchorPane layoutX="15.0" layoutY="20.0" prefHeight="440.0" prefWidth="348.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="90.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
