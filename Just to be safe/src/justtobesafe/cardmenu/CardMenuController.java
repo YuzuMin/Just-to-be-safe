@@ -60,4 +60,8 @@ public class CardMenuController {
             activityHandler.closeStage(CardMenu);
         }
     }
+
+    public void onDeleteButtonClicked(MouseEvent mouseEvent) {
+        System.out.println("delet");
+    }
 }
