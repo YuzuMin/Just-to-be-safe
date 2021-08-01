@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -42,15 +43,14 @@ public class AccountMenuController implements Initializable {
     @FXML private Label warning1;
     @FXML private Label warning2;
     @FXML private ListView<String> accountView;
+    @FXML private Button setBtn;
 
     int position;
     boolean deleteBtnIsActive=false;
 
     LinkedList<Account> accountList = new LinkedList<Account>();
     LinkedList<String> accountEncryptedStringList = new LinkedList<String>();
-    //LinkedList<String> accountListView = new LinkedList<String>();
 
-    //ListView<String> accountView = new ListView<String>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayAccounts();
@@ -68,11 +68,10 @@ public class AccountMenuController implements Initializable {
                 link_field.setText(accountList.get(value).getLink());
                 email_field.setText(accountList.get(value).getEmail());
                 pswd_field.setText(accountList.get(value).getPassword());
-
+                setBtn.setText("Update");
             }
         });
     }
-
 
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
         String displayText="Are you sure you want to logout now?";
@@ -104,48 +103,58 @@ public class AccountMenuController implements Initializable {
             link_field.setText("");
             warning1.setText("");
             warning2.setText("Site Link Empty");
-        }else{
+        }else {
+
             //Encrypt Site Name
-            String Site=site_field.getText();
-            Site=Site.replace(","," | ");
-            Site=encryptionHandler.cc_encrypt(Site,69,420);
-            Site=Site+",";
+            String Site = site_field.getText();
+            Site = Site.replace(",", " | ");
+            Site = encryptionHandler.cc_encrypt(Site, 69, 420);
+            Site = Site + ",";
 
             //Encrypt Site Link
-            String Link=link_field.getText();
-            Link=Link.replace(","," | ");
-            Link=encryptionHandler.cc_encrypt(Link,70,421);
-            Link=Link+",";
+            String Link = link_field.getText();
+            Link = Link.replace(",", " | ");
+            for(int i = 0;i<accountList.size();i++){
+                if(Link.equals(accountList.get(i).getLink())){
+                    deleteBtnIsActive=true;
+                    position=i;
+                    setBtn.setText("Update");
+                    break;
+                }
+            }
+
+            Link = encryptionHandler.cc_encrypt(Link, 70, 421);
+            Link = Link + ",";
 
             //Encrypt Email
-            String Email=email_field.getText();
-            Email=Email.replace(","," | ");
-            Email=encryptionHandler.cc_encrypt(Email,71,422);
-            Email=Email+",";
+            String Email = email_field.getText();
+            Email = Email.replace(",", " | ");
+            Email = encryptionHandler.cc_encrypt(Email, 71, 422);
+            Email = Email + ",";
 
             //Encrypt Password
-            String Password=pswd_field.getText();
-            Password=Password.replace(","," | ");
-            Password=encryptionHandler.cc_encrypt(Password,72,423);
-            Password=Password+"\n";
+            String Password = pswd_field.getText();
+            Password = Password.replace(",", " | ");
+            Password = encryptionHandler.cc_encrypt(Password, 72, 423);
 
             //Write as String
-            String data=Site+Link+Email+Password;
-            dataHandler.writeCsvFile(AssetPaths.acctCSV,data);
+            String data = Site + Link + Email + Password;
 
+            if(setBtn.getText().equals("Update")){
+                accountEncryptedStringList.set(position,data);
+                dataHandler.deleteCSVFile(AssetPaths.acctCSV, accountEncryptedStringList);
+                Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Updated Successfully", 500, 1000, 500);
+            }else{
+                dataHandler.writeCsvFile(AssetPaths.acctCSV, data+ "\n");
+                Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Added Successfully", 500, 1000, 500);
+            }
             onClearButtonClicked(mouseEvent);
-            Toast.makeText(((Stage) AccountMenu.getScene().getWindow()),"Account Added Successfully",500,1000,500);
-
-            activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
-            activityHandler.closeStage(AccountMenu);
         }
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
-        site_field.setText("");
-        link_field.setText("");
-        email_field.setText("");
-        pswd_field.setText("");
+        activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(AccountMenu);
     }
 
     private void displayAccounts(){
@@ -186,7 +195,6 @@ public class AccountMenuController implements Initializable {
             }
         }
     }
-
 
     public void onFunctionKeyPress(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
