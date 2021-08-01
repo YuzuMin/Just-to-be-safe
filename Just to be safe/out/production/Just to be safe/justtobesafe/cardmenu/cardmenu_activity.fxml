@@ -29,9 +29,9 @@
                       <TextField fx:id="cvv_field" layoutX="148.0" layoutY="104.0" prefHeight="32.0" prefWidth="63.0" promptText="888" styleClass="card-field" />
                       <TextField fx:id="cardholder_field" layoutY="144.0" prefHeight="40.0" prefWidth="296.0" promptText="John Doe" styleClass="card-field" />
                </children></AnchorPane>
-                <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add Card" />
+                <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
-                <Button fx:id="copyBtn" layoutX="73.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="39.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
+                <Button fx:id="copyBtn" layoutX="73.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="0.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
             </children>
         </AnchorPane>
     </children>
