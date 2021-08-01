@@ -29,7 +29,7 @@
                 <Label layoutX="14.0" layoutY="241.0" text="Password:" />
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
-            <Label fx:id="warning1" layoutX="113.0" layoutY="296.0" styleClass="warning-label" text="" />
+            <Label fx:id="warning1" layoutX="113.0" layoutY="296.0" styleClass="warning-label" text="" alignment="CENTER"/>
             <Label fx:id="warning2" layoutX="120.0" layoutY="296.0" styleClass="warning-label" text="" />
             </children>
         </AnchorPane>
