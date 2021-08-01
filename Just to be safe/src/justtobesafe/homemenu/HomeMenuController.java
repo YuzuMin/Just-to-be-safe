@@ -27,18 +27,18 @@ public class HomeMenuController {
 
     //Click Accounts & Passwords button
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(HomeMenu);
     }
     //Click Settings button
     public void onSettingsButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(ActivityPaths.settingsMenu,AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(HomeMenu);
     }
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(HomeMenu);
         activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(HomeMenu);
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -80,8 +80,8 @@ public class HomeMenuController {
             activityHandler.loadActivity(ActivityPaths.decoyActivity,AssetPaths.decoyTitle,AssetPaths.decoyIcon);
             activityHandler.closeStage(HomeMenu);
         }else if (keyEvent.getCode().equals(KeyCode.F2)) {
-                activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
-                activityHandler.closeStage(HomeMenu);
+            activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
+            activityHandler.closeStage(HomeMenu);
         }else if (keyEvent.getCode().equals(KeyCode.F3)) {
             activityHandler.loadActivity(ActivityPaths.accountMenu,AssetPaths.title,AssetPaths.icon);
             activityHandler.closeStage(HomeMenu);
