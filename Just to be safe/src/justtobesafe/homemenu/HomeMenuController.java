@@ -7,6 +7,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 // Program Imports
+import justtobesafe.alert.AlertPopup;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.toast.Toast;
 import justtobesafe.random.RandomHandler;
@@ -41,8 +42,14 @@ public class HomeMenuController {
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(HomeMenu);
-        activityHandler.loadActivity(ActivityPaths.loginActivity,AssetPaths.title, AssetPaths.icon);
+        String displayText="Are you sure you want to logout now?";
+        String smallText="";
+        String displayTitle="Confirm Logout";
+        boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+        if(confirmed) {
+            activityHandler.closeStage(HomeMenu);
+            activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+        }
     }
     //Click Generate Random Passwords with hashing
     public void onGenerateButtonClicked(MouseEvent mouseEvent) {
