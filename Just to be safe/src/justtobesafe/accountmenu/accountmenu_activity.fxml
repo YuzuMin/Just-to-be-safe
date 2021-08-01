@@ -7,7 +7,7 @@
     <children>
         <Button fx:id="logoutBtn" layoutX="509.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="377.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
-        <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="381.0" prefWidth="240.0" styleClass="upper-layer">
+        <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="335.0" prefWidth="240.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="55.0" layoutY="14.0" text="Account Database" />
                 <ListView fx:id="accountView" layoutX="1.0" layoutY="45.0" prefHeight="336.0" prefWidth="238.0" styleClass="upper-layer">
@@ -18,18 +18,19 @@
         <AnchorPane layoutX="15.0" layoutY="20.0" prefHeight="440.0" prefWidth="348.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="83.0" layoutY="14.0" styleClass="title-label" text="Account &amp; Password" />
-                <TextField fx:id="site_field" layoutX="110.0" layoutY="72.0" prefHeight="39.0" prefWidth="223.0" promptText="Shopping Site" onMouseClicked="#onTextFieldClicked"/>
+                <TextField fx:id="site_field" layoutX="110.0" layoutY="72.0" onMouseClicked="#onTextFieldClicked" prefHeight="39.0" prefWidth="223.0" promptText="Shopping Site" />
                 <Label layoutX="14.0" layoutY="79.0" text="Site Name:" />
-                <TextField fx:id="link_field" layoutX="110.0" layoutY="126.0" prefHeight="39.0" prefWidth="223.0" promptText="www.shopping.com" onMouseClicked="#onTextFieldClicked"/>
+                <TextField fx:id="link_field" layoutX="110.0" layoutY="126.0" onMouseClicked="#onTextFieldClicked" prefHeight="39.0" prefWidth="223.0" promptText="www.shopping.com" />
                 <Label layoutX="14.0" layoutY="133.0" prefHeight="25.0" prefWidth="71.0" text="Site Link:" />
-                <TextField fx:id="email_field" layoutX="110.0" layoutY="180.0" prefHeight="39.0" prefWidth="223.0" promptText="myemail@email.com" onMouseClicked="#onTextFieldClicked"/>
+                <TextField fx:id="email_field" layoutX="110.0" layoutY="180.0" onMouseClicked="#onTextFieldClicked" prefHeight="39.0" prefWidth="223.0" promptText="myemail@email.com" />
                 <Label layoutX="14.0" layoutY="187.0" text="Email/User:" />
-                <TextField fx:id="pswd_field" layoutX="110.0" layoutY="234.0" prefHeight="39.0" prefWidth="223.0" promptText="Password" onMouseClicked="#onTextFieldClicked"/>
+                <TextField fx:id="pswd_field" layoutX="110.0" layoutY="234.0" onMouseClicked="#onTextFieldClicked" prefHeight="39.0" prefWidth="223.0" promptText="Password" />
                 <Label layoutX="14.0" layoutY="241.0" text="Password:" />
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
+                <Button fx:id="deleteBtn" layoutX="110.0" layoutY="289.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="223.0" styleClass="logout-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="387.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
-            <Label fx:id="warning1" layoutX="113.0" layoutY="296.0" text="" styleClass="warning-label"/>
-            <Label fx:id="warning2" layoutX="120.0" layoutY="296.0" text="" styleClass="warning-label"/>
+            <Label fx:id="warning1" layoutX="113.0" layoutY="296.0" styleClass="warning-label" text="" />
+            <Label fx:id="warning2" layoutX="120.0" layoutY="296.0" styleClass="warning-label" text="" />
             </children>
         </AnchorPane>
     </children>
