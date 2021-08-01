@@ -77,7 +77,24 @@ public class DataHandler implements FileInterface, CsvInterface{
     }
 
     @Override
-    public void deleteCSVFile(String file) {
-        System.out.println("deleteCSVFile");
+    public void deleteCSVFile(String file,LinkedList<String> inputlist) {
+        try {
+            //EMPTY CSV FILE
+            FileOutputStream outputStream = new FileOutputStream(file);
+            outputStream.close();
+            //START WRITING
+            outputStream = new FileOutputStream(file,true);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+
+            for (int i =0 ;i<inputlist.size();i++){
+                bufferedWriter.write(inputlist.get(i)+"\n");
+            }
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //System.out.println("deleteCSVFile");
     }
 }
