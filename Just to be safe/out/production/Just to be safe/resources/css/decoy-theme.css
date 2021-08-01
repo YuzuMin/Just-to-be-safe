@@ -1,0 +1,33 @@
+
+* {
+    /*Darker*/
+    -fx-primary1 : #090a0c;
+    -fx-primary2 : #14161a;
+    -fx-primary3 : #1f2229;
+    -fx-primary  : #2A2A2E;
+    -fx-primary4 : #353a45;
+    -fx-primary5 : #404654;
+    -fx-primary5 : #4b5262;
+    /*Lighter*/
+
+    -fx-blvck : #1f1f1f;
+    -fx-black : #000000;
+    -fx-porcelain : #f1f1f1;
+    -fx-darkporcelain : #E1E1E1;
+    -fx-verydarkporcelain : #B1B1B1;
+}
+
+.root{
+    -fx-background-color: -fx-primary;
+}
+
+
+.text-field{
+    -fx-border-radius: 8;
+    -fx-background-radius:8;
+    -fx-prompt-text-fill: #797982;
+    -fx-border-color: #797982;
+    -fx-background-color: #38383D;
+    -fx-text-fill: -fx-porcelain;
+    -fx-font-size : 12pt;
+}
