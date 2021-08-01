@@ -46,6 +46,7 @@ public class AccountMenuController implements Initializable {
     int position;
 
     LinkedList<Account> accountList = new LinkedList<Account>();
+    LinkedList<String> accountEncryptedStringList = new LinkedList<String>();
     //LinkedList<String> accountListView = new LinkedList<String>();
 
     //ListView<String> accountView = new ListView<String>();
@@ -73,11 +74,19 @@ public class AccountMenuController implements Initializable {
 
 
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
-        
-        AlertPopup.confirmation("Are you sure you want to logout now?","Just to be safe");
+        String displayText="Are you sure you want to logout now?";
+        String smallText="";
+        String displayTitle="Confirm Logout";
 
-        activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
-        activityHandler.closeStage(AccountMenu);
+        if((!site_field.getText().isBlank())||(!link_field.getText().isBlank())){
+            smallText = "You still have some unsaved changes";
+        }
+
+        boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+        if(confirmed){
+            activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
+        }
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
@@ -140,6 +149,8 @@ public class AccountMenuController implements Initializable {
 
     private void displayAccounts(){
         LinkedList<String> list = dataHandler.readCsvFile(AssetPaths.acctCSV);
+        accountEncryptedStringList.clear();
+        accountEncryptedStringList =list;
         accountList.clear();
         accountView.getItems().clear();
 
@@ -158,20 +169,12 @@ public class AccountMenuController implements Initializable {
 
             accountView.getItems().add(EBX);
         }
-        /*
-        for(int i=0; i<accountList.size();i++){
-            Account acc = accountList.get(i);
-            System.out.println(acc.getName());
-            System.out.println(acc.getLink());
-            System.out.println(acc.getEmail());
-            System.out.println(acc.getPassword());
-        }
-        for(int i=0; i<accountListView.size();i++){
-            String BX = accountListView.get(i);
-            System.out.println(BX);
-        }
-         */
     }
+    private void deleteAccount(){
+        accountEncryptedStringList.remove(position);
+        dataHandler.deleteCSVFile(AssetPaths.acctCSV,accountEncryptedStringList);
+    }
+
 
     public void onFunctionKeyPress(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
@@ -187,6 +190,7 @@ public class AccountMenuController implements Initializable {
             activityHandler.loadActivity(ActivityPaths.settingsMenu,AssetPaths.title,AssetPaths.icon);
             activityHandler.closeStage(AccountMenu);
         }else if (keyEvent.getCode().equals(KeyCode.DELETE)) {
+            deleteAccount();
             activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
             activityHandler.closeStage(AccountMenu);
         }
