@@ -25,7 +25,7 @@ public final class Toast
 
         Text text = new Text(toastMsg);
         text.setFont(Font.font("Verdana", 12));
-        text.setFill(Color.GREEN);
+        text.setFill(Color.GREENYELLOW);
 
         StackPane root = new StackPane(text);
         root.setStyle("-fx-background-radius: 20; -fx-background-color: rgba(0, 0, 0, 0.2); -fx-padding: 10px;");
