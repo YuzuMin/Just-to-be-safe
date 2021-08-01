@@ -23,12 +23,14 @@
                 <Label layoutX="90.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
                 <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="192.0" prefWidth="318.0" styleClass="card-layer">
                <children>
-                      <TextField fx:id="cardName_field" layoutY="8.0" prefHeight="40.0" prefWidth="318.0" promptText="My Credit Card" styleClass="card-field" />
+                      <TextField fx:id="cardName_field" layoutY="2.0" prefHeight="40.0" prefWidth="318.0" promptText="My Credit Card" styleClass="card-field" />
                       <TextField fx:id="cardNum_field" layoutY="56.0" onKeyTyped="#cardnumOnKeyTyped" prefHeight="40.0" prefWidth="318.0" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="card-field" />
-                      <TextField fx:id="expiry_field" layoutY="104.0" prefHeight="40.0" prefWidth="94.0" promptText="MM/YY" styleClass="card-field" />
-                      <TextField fx:id="cvv_field" layoutX="148.0" layoutY="104.0" prefHeight="32.0" prefWidth="63.0" promptText="888" styleClass="card-field" />
-                      <TextField fx:id="cardholder_field" layoutY="144.0" prefHeight="40.0" prefWidth="296.0" promptText="John Doe" styleClass="card-field" />
-                  <Label layoutX="7.0" layoutY="44.0" styleClass="mini-label" text="Card Number" />
+                      <TextField fx:id="expiry_field" layoutY="112.0" prefHeight="40.0" prefWidth="94.0" promptText="MM/YY" styleClass="card-field" />
+                      <TextField fx:id="cvv_field" layoutX="149.0" layoutY="113.0" prefHeight="32.0" prefWidth="63.0" promptText="888" styleClass="card-field" />
+                      <TextField fx:id="cardholder_field" layoutY="149.0" prefHeight="40.0" prefWidth="296.0" promptText="John Doe" styleClass="card-field" />
+                  <Label layoutX="12.0" layoutY="41.0" styleClass="mini-label" text="Card Number" />
+                  <Label layoutX="14.0" layoutY="98.0" styleClass="mini-label" text="Valid Thru" />
+                  <Label layoutX="161.0" layoutY="98.0" styleClass="mini-label" text="CVV" />
                </children></AnchorPane>
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
