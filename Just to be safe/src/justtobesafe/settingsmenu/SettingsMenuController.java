@@ -53,6 +53,9 @@ public class SettingsMenuController {
                     passwd_field.setText("");
                     passwd_reenter_field.setText("");
                     Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
+                    pswd_warning.setText("");
+                    pswd_warning1.setText("");
+                    pswd_warning2.setText("");
                 }
             }else{
                 pswd_warning.setText("");
@@ -69,19 +72,29 @@ public class SettingsMenuController {
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(SettingsMenu);
-        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+        if((!passwd_field.getText().isBlank())||(!passwd_reenter_field.getText().isBlank())){
+            String displayText="Are you sure you want to leave?";
+            String smallText="You have unsaved changes.";
+            String displayTitle="Confirm Logout";
+            boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+            if(confirmed) {
+                activityHandler.loadActivity(ActivityPaths.homeMenu, AssetPaths.title, AssetPaths.icon);
+                activityHandler.closeStage(SettingsMenu);
+            }
+        }else{
+            activityHandler.loadActivity(ActivityPaths.homeMenu, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(SettingsMenu);
+        }
     }
 
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
         activityHandler.closeStage(SettingsMenu);
         activityHandler.loadActivity(ActivityPaths.accountMenu,AssetPaths.title, AssetPaths.icon);
     }
-
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(SettingsMenu);
         activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(SettingsMenu);
     }
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -90,8 +103,8 @@ public class SettingsMenuController {
         String displayTitle="Confirm Logout";
         boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
         if(confirmed) {
-            activityHandler.closeStage(SettingsMenu);
             activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(SettingsMenu);
         }
     }
 
@@ -110,6 +123,4 @@ public class SettingsMenuController {
             activityHandler.closeStage(SettingsMenu);
         }
     }
-
-
 }
