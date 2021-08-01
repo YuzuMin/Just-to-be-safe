@@ -7,7 +7,7 @@
     <children>
         <Button fx:id="logoutBtn" layoutX="509.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="377.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
-        <AnchorPane fx:id="cardBtn" layoutX="380.0" layoutY="20.0" prefHeight="384.0" prefWidth="242.0" styleClass="upper-layer">
+        <AnchorPane layoutX="380.0" layoutY="20.0" prefHeight="384.0" prefWidth="242.0" styleClass="upper-layer">
             <children>
                 <Label layoutX="55.0" layoutY="14.0" text="Account Database" />
                 <ListView fx:id="accountView" layoutX="1.0" layoutY="45.0" prefHeight="279.0" prefWidth="238.0" styleClass="upper-layer">
