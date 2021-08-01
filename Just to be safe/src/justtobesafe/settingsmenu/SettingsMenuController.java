@@ -50,6 +50,8 @@ public class SettingsMenuController {
                 }catch(Exception ex){
 
                 }finally{
+                    passwd_field.setText("");
+                    passwd_reenter_field.setText("");
                     Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
                 }
             }else{
