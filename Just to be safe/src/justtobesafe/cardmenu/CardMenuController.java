@@ -1,6 +1,9 @@
 package justtobesafe.cardmenu;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -17,9 +20,11 @@ import justtobesafe.data.Card;
 import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
 
+import java.net.URL;
 import java.util.LinkedList;
+import java.util.ResourceBundle;
 
-public class CardMenuController {
+public class CardMenuController implements Initializable {
     EncryptionHandler encryptionHandler = new EncryptionHandler();
     ActivityHandler activityHandler = new ActivityHandler();
     DataHandler dataHandler = new DataHandler();
@@ -39,6 +44,29 @@ public class CardMenuController {
 
     LinkedList<Card> cardList = new LinkedList<Card>();
     LinkedList<String> cardEncryptedStringList = new LinkedList<String>();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        displayAccounts();
+
+        cardView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                String[] EAX =newValue.split(". ");
+                int value = Integer.parseInt(EAX[0]);
+                value--;
+                position=value;
+                deleteBtnIsActive=true;
+                cardName_field.setText(cardList.get(value).getCardName());
+                cardNum_field.setText(cardList.get(value).getCardNumber());
+                cvv_field.setText(cardList.get(value).getCvv());
+                expiry_field.setText(cardList.get(value).getExpiry());
+                cardholder_field.setText(cardList.get(value).getCardHolder());
+                setBtn.setText("Update");
+            }
+        });
+    }
 
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
@@ -77,7 +105,7 @@ public class CardMenuController {
     }
 
     private void displayAccounts(){
-        LinkedList<String> list = dataHandler.readCsvFile(AssetPaths.acctCSV);
+        LinkedList<String> list = dataHandler.readCsvFile(AssetPaths.cardCSV);
         cardEncryptedStringList.clear();
         cardEncryptedStringList =list;
         cardList.clear();
@@ -90,8 +118,9 @@ public class CardMenuController {
             EAX[1]=encryptionHandler.cc_decrypt(EAX[1],70,421);     //Decrypt LINK
             EAX[2]=encryptionHandler.cc_decrypt(EAX[2],71,422);     //Decrypt Email
             EAX[3]=encryptionHandler.cc_decrypt(EAX[3],72,423);     //Decrypt Password
+            EAX[3]=encryptionHandler.cc_decrypt(EAX[3],73,424);     //Decrypt Password
 
-            Card card = new Card(EAX[0],EAX[1],EAX[2],EAX[3]);
+            Card card = new Card(EAX[0],EAX[1],EAX[2],EAX[3],EAX[4]);
             String EBX="";
             EBX=(i+1)+". "+EAX[0];
             cardList.add(card);
@@ -119,4 +148,5 @@ public class CardMenuController {
     public void onDeleteButtonClicked(MouseEvent mouseEvent) {
         System.out.println("delet");
     }
+
 }
