@@ -8,7 +8,7 @@
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="220.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/google.png" />
+            <Image url="@../../resources/drawable/google.png" />
          </image>
       </ImageView>
       <TextField layoutX="170.0" layoutY="221.0" prefHeight="39.0" prefWidth="300.0" promptText="Search Google or type a URL" />
