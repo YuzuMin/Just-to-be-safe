@@ -164,6 +164,12 @@
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GIT\Just-to-be-safe\Just to be safe\src\resources\drawable" />
+      <recent name="D:\GIT\Just-to-be-safe\Just to be safe\src\resources\css" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
