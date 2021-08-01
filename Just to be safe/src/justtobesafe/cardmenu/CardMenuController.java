@@ -12,6 +12,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.alert.AlertPopup;
@@ -20,6 +21,7 @@ import justtobesafe.data.Account;
 import justtobesafe.data.Card;
 import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
+import justtobesafe.toast.Toast;
 
 import java.net.URL;
 import java.util.LinkedList;
@@ -93,14 +95,74 @@ public class CardMenuController implements Initializable {
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
-
+        cardNum_field.getText();
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
+        activityHandler.closeStage(CardMenu);
+        activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
+        if(cardName_field.getText().isBlank()){
+            cardName_field.setText("");
+            warning1.setText("Card Name Empty");
+            warning2.setText("");
+        }else if(cardNum_field.getText().isBlank()){
+            cardNum_field.setText("");
+            warning1.setText("");
+            warning2.setText("Card Number Empty");
+        }else {
+            //Encrypt CardName
+            String cardName =cardName_field.getText();
+            cardName = cardName.replace(",","|");
+            cardName = encryptionHandler.cc_encrypt(cardName, 69, 420);
+            cardName = cardName + ",";
 
+            //Encrypt Card Number
+            String cardNum =cardNum_field.getText();
+            cardNum = cardNum.replace(",","|");
+            for(int i = 0;i<cardList.size();i++){
+                if(cardNum.equals(cardList.get(i).getCardNumber())){
+                    deleteBtnIsActive=true;
+                    position=i;
+                    setBtn.setText("Update");
+                    break;
+                }
+            }
+            cardNum = encryptionHandler.cc_encrypt(cardNum, 70, 421);
+            cardNum = cardNum + ",";
+
+            //Encrypt CVV
+            String cvv =cvv_field.getText();
+            cvv = cvv.replace(",","|");
+            cvv = encryptionHandler.cc_encrypt(cvv, 71, 422);
+            cvv = cvv + ",";
+
+            //Encrypt Expiry
+            String expiry =expiry_field.getText();
+            expiry = expiry.replace(",","|");
+            expiry = encryptionHandler.cc_encrypt(expiry, 72, 423);
+            expiry = expiry + ",";
+
+            //Encrypt CardHolder
+            String cardHolder =cardholder_field.getText();
+            cardHolder = cardHolder.replace(",","|");
+            cardHolder = encryptionHandler.cc_encrypt(cardHolder, 73, 424);
+
+            //Write as String
+            String data = cardName + cardNum + cvv + expiry + cardHolder;
+
+            if(setBtn.getText().equals("Update")){
+                cardEncryptedStringList.set(position,data);
+                dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
+                Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Updated Successfully", 500, 1000, 500);
+            }else{
+                dataHandler.writeCsvFile(AssetPaths.cardCSV, data+ "\n");
+                Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Added Successfully", 500, 1000, 500);
+            }
+            onClearButtonClicked(mouseEvent);
+        }
     }
 
     public void cardnumOnKeyTyped(KeyEvent keyEvent) {
@@ -121,7 +183,7 @@ public class CardMenuController implements Initializable {
             EAX[1]=encryptionHandler.cc_decrypt(EAX[1],70,421);     //Decrypt LINK
             EAX[2]=encryptionHandler.cc_decrypt(EAX[2],71,422);     //Decrypt Email
             EAX[3]=encryptionHandler.cc_decrypt(EAX[3],72,423);     //Decrypt Password
-            EAX[3]=encryptionHandler.cc_decrypt(EAX[3],73,424);     //Decrypt Password
+            EAX[4]=encryptionHandler.cc_decrypt(EAX[4],73,424);     //Decrypt Password
 
             Card card = new Card(EAX[0],EAX[1],EAX[2],EAX[3],EAX[4]);
             String EBX="";
