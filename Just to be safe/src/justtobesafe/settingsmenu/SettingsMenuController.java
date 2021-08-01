@@ -93,7 +93,6 @@ public class SettingsMenuController {
         }
     }
 
-
     public void onFunctionKeyPress(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
             activityHandler.loadActivity(ActivityPaths.decoyActivity,AssetPaths.decoyTitle,AssetPaths.decoyIcon);
