@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
+import justtobesafe.alert.AlertPopup;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.data.Account;
 import justtobesafe.data.Card;
@@ -41,13 +42,24 @@ public class CardMenuController {
 
     //Click Logout Button
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(CardMenu);
-        activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+        String displayText="Are you sure you want to logout now?";
+        String smallText="";
+        String displayTitle="Confirm Logout";
+
+        if((!cardName_field.getText().isBlank())||(!cardNum_field.getText().isBlank())){
+            smallText = "You still have some unsaved changes";
+        }
+
+        boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+        if(confirmed){
+            activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(CardMenu);
+        }
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(CardMenu);
         activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(CardMenu);
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
