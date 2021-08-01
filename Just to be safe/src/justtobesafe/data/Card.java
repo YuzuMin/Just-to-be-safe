@@ -3,12 +3,22 @@ package justtobesafe.data;
 public class Card extends DataObject {
     private String cvv;
     private String expiry;
+    private String cardHolder;
 
-    public Card(String CardName, String CardNumber, String cvv, String expiry ) {
+    public Card(String CardName, String CardNumber, String cvv, String expiry,String cardHolder) {
         DisplayName=CardName;
         UniqueIdentifier=CardNumber;
         this.cvv=cvv;
         this.expiry=expiry;
+        this.cardHolder=cardHolder;
+    }
+
+    public String getCardHolder() {
+        return cardHolder;
+    }
+
+    public void setCardHolder(String cardHolder) {
+        this.cardHolder = cardHolder;
     }
 
     public String getCardName() {
