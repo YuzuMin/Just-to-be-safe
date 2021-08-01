@@ -47,8 +47,8 @@ public class HomeMenuController {
         String displayTitle="Confirm Logout";
         boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
         if(confirmed) {
-            activityHandler.closeStage(HomeMenu);
             activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(HomeMenu);
         }
     }
     //Click Generate Random Passwords with hashing
