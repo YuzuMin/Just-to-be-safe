@@ -44,6 +44,7 @@ public class AccountMenuController implements Initializable {
     @FXML private ListView<String> accountView;
 
     int position;
+    boolean deleteBtnIsActive=false;
 
     LinkedList<Account> accountList = new LinkedList<Account>();
     LinkedList<String> accountEncryptedStringList = new LinkedList<String>();
@@ -62,7 +63,7 @@ public class AccountMenuController implements Initializable {
                 int value = Integer.parseInt(EAX[0]);
                 value--;
                 position=value;
-
+                deleteBtnIsActive=true;
                 site_field.setText(accountList.get(value).getName());
                 link_field.setText(accountList.get(value).getLink());
                 email_field.setText(accountList.get(value).getEmail());
@@ -170,9 +171,20 @@ public class AccountMenuController implements Initializable {
             accountView.getItems().add(EBX);
         }
     }
+
     private void deleteAccount(){
-        accountEncryptedStringList.remove(position);
-        dataHandler.deleteCSVFile(AssetPaths.acctCSV,accountEncryptedStringList);
+        if(deleteBtnIsActive){
+            String displayText="Are you sure you want delete "+accountList.get(position).getName() +"?";
+            String smallText="";
+            String displayTitle="Confirm Delete";
+            boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+            if(confirmed) {
+                accountEncryptedStringList.remove(position);
+                dataHandler.deleteCSVFile(AssetPaths.acctCSV, accountEncryptedStringList);
+                activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
+                activityHandler.closeStage(AccountMenu);
+            }
+        }
     }
 
 
@@ -191,14 +203,15 @@ public class AccountMenuController implements Initializable {
             activityHandler.closeStage(AccountMenu);
         }else if (keyEvent.getCode().equals(KeyCode.DELETE)) {
             deleteAccount();
-            activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
-            activityHandler.closeStage(AccountMenu);
         }
-
     }
 
     public void onTextFieldClicked(MouseEvent mouseEvent) {
         warning1.setText("");
         warning2.setText("");
+    }
+
+    public void onDeleteButtonClicked(MouseEvent mouseEvent) {
+        deleteAccount();
     }
 }
