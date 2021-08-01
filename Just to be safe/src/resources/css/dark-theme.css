@@ -202,11 +202,16 @@
     -fx-text-fill: -fx-pimple_yellow;
 }
 
-
 .label{
     -fx-text-alignment: center;
     -fx-font-size : 12pt;
     -fx-text-fill: -fx-darkporcelain;
+}
+
+.mini-label{
+    -fx-text-alignment: center;
+    -fx-font-size : 9pt;
+    -fx-text-fill: -fx-primary6;
 }
 
 .title-label{
