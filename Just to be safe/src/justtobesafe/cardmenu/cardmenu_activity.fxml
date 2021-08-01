@@ -10,7 +10,7 @@
 
         <AnchorPane layoutX="380.0" layoutY="20.0" prefHeight="384.0" prefWidth="242.0" styleClass="upper-layer">
             <children>
-                <Label layoutX="55.0" layoutY="14.0" text="Credit Card Database" />
+                <Label layoutX="46.0" layoutY="14.0" text="Credit Card Database" />
                 <ListView fx:id="cardView" layoutX="1.0" layoutY="45.0" prefHeight="279.0" prefWidth="238.0" styleClass="upper-layer">
 
                 </ListView>
