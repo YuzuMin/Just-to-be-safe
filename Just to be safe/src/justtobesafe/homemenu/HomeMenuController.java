@@ -57,17 +57,10 @@ public class HomeMenuController {
     }
     //Click Copy to Clipboard Button
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
-        //content.putString(output_field.getText());
-        //clipboard.setContent(content);
-        clipboardCopy(output_field.getText());
+        content.putString(output_field.getText());
+        clipboard.setContent(content);
 
         Toast.makeText(((Stage) HomeMenu.getScene().getWindow()), "Copied to clipboard", 500, 100, 100);
-    }
-    private void clipboardCopy(String str){
-        final Clipboard clipboard2 = Clipboard.getSystemClipboard();
-        final ClipboardContent content2 = new ClipboardContent();
-        content2.putString(str);
-        clipboard2.setContent(content2);
     }
     //Click Reset Button
     public void onResetButtonClicked(MouseEvent mouseEvent) {
