@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="CardMenu" onKeyPressed="#onFunctionKeyPress" prefHeight="480.0" prefWidth="640.0" stylesheets="@../../resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.cardmenu.CardMenuController">
+<AnchorPane fx:id="CardMenu" onKeyPressed="#onFunctionKeyPress" prefHeight="480.0" prefWidth="640.0" stylesheets="@../../resources/css/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="justtobesafe.cardmenu.CardMenuController">
     <children>
         <Button fx:id="logoutBtn" layoutX="506.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="logout-button" text="Logout" />
         <Button fx:id="homeBtn" layoutX="380.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="card-button" text="Home" />
