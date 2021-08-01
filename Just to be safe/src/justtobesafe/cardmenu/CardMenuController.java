@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
@@ -31,6 +29,9 @@ public class CardMenuController implements Initializable {
     EncryptionHandler encryptionHandler = new EncryptionHandler();
     ActivityHandler activityHandler = new ActivityHandler();
     DataHandler dataHandler = new DataHandler();
+
+    final Clipboard clipboard = Clipboard.getSystemClipboard();
+    final ClipboardContent content = new ClipboardContent();
 
     @FXML private AnchorPane CardMenu;
     @FXML private TextField cardName_field;
@@ -95,7 +96,10 @@ public class CardMenuController implements Initializable {
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
-        cardNum_field.getText();
+        content.putString(cardNum_field.getText());
+        clipboard.setContent(content);
+
+        Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Copied to clipboard", 500, 100, 100);
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
@@ -135,18 +139,27 @@ public class CardMenuController implements Initializable {
 
             //Encrypt CVV
             String cvv =cvv_field.getText();
+            if(cvv.isBlank()){
+                cvv=" ";
+            }
             cvv = cvv.replace(",","|");
             cvv = encryptionHandler.cc_encrypt(cvv, 71, 422);
             cvv = cvv + ",";
 
             //Encrypt Expiry
             String expiry =expiry_field.getText();
+            if(expiry.isBlank()){
+                expiry=" ";
+            }
             expiry = expiry.replace(",","|");
             expiry = encryptionHandler.cc_encrypt(expiry, 72, 423);
             expiry = expiry + ",";
 
             //Encrypt CardHolder
             String cardHolder =cardholder_field.getText();
+            if(cardHolder.isBlank()){
+                cardHolder=" ";
+            }
             cardHolder = cardHolder.replace(",","|");
             cardHolder = encryptionHandler.cc_encrypt(cardHolder, 73, 424);
 
@@ -210,8 +223,23 @@ public class CardMenuController implements Initializable {
         }
     }
 
+    private void deleteAccount(){
+        if(deleteBtnIsActive){
+            String displayText="Are you sure you want delete "+cardList.get(position).getCardName() +"?";
+            String smallText="";
+            String displayTitle="Confirm Delete";
+            boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+            if(confirmed) {
+                cardEncryptedStringList.remove(position);
+                dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
+                activityHandler.loadActivity(ActivityPaths.cardMenu, AssetPaths.title, AssetPaths.icon);
+                activityHandler.closeStage(CardMenu);
+            }
+        }
+    }
+
     public void onDeleteButtonClicked(MouseEvent mouseEvent) {
-        System.out.println("delet");
+        deleteAccount();
     }
 
 }
