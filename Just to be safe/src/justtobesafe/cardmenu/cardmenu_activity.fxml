@@ -32,6 +32,8 @@
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
                 <Button fx:id="copyBtn" layoutX="73.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="0.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
+            <Label layoutX="110.0" layoutY="329.0" text="Card Name Empty" styleClass="warning-label"/>
+            <Label layoutX="102.0" layoutY="329.0" text="Card Number Empty" styleClass="warning-label"/>
             </children>
         </AnchorPane>
     </children>
