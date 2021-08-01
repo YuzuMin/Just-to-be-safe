@@ -91,8 +91,19 @@ public class CardMenuController implements Initializable {
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
-        activityHandler.closeStage(CardMenu);
+        if((!cardName_field.getText().isBlank())||(!cardNum_field.getText().isBlank())){
+            String displayText="Are you sure you want to leave?";
+            String smallText="You have unsaved changes.";
+            String displayTitle="Confirm Logout";
+            boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+            if(confirmed) {
+                activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+                activityHandler.closeStage(CardMenu);
+            }
+        }else{
+            activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(CardMenu);
+        }
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
@@ -103,8 +114,8 @@ public class CardMenuController implements Initializable {
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(CardMenu);
         activityHandler.loadActivity(ActivityPaths.cardMenu,AssetPaths.title,AssetPaths.icon);
+        activityHandler.closeStage(CardMenu);
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
@@ -166,15 +177,18 @@ public class CardMenuController implements Initializable {
             //Write as String
             String data = cardName + cardNum + cvv + expiry + cardHolder;
 
-            if(setBtn.getText().equals("Update")){
-                cardEncryptedStringList.set(position,data);
-                dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
-                Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Updated Successfully", 500, 1000, 500);
-            }else{
-                dataHandler.writeCsvFile(AssetPaths.cardCSV, data+ "\n");
-                Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Added Successfully", 500, 1000, 500);
+            try{
+                if(setBtn.getText().equals("Update")){
+                    cardEncryptedStringList.set(position,data);
+                    dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
+                    //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Updated Successfully", 500, 1000, 500);
+                }else{
+                    dataHandler.writeCsvFile(AssetPaths.cardCSV, data+ "\n");
+                    //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Added Successfully", 500, 1000, 500);
+                }
+            }finally {
+                onClearButtonClicked(mouseEvent);
             }
-            onClearButtonClicked(mouseEvent);
         }
     }
 
