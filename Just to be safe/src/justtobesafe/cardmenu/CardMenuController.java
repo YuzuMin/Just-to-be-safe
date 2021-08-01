@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -36,8 +37,9 @@ public class CardMenuController implements Initializable {
     @FXML private TextField expiry_field;
     @FXML private TextField cardholder_field;
     @FXML private ListView<String> cardView;
+    @FXML private Label warning1;
+    @FXML private Label warning2;
     @FXML private Button setBtn;
-    @FXML private Button clearBtn;
 
     int position;
     boolean deleteBtnIsActive=false;
@@ -91,13 +93,14 @@ public class CardMenuController implements Initializable {
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
-        setBtn.setText("Update Card");
+
     }
 
     public void onClearButtonClicked(MouseEvent mouseEvent) {
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
+
     }
 
     public void cardnumOnKeyTyped(KeyEvent keyEvent) {
