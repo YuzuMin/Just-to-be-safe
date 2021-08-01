@@ -88,8 +88,8 @@ public class SettingsMenuController {
     }
 
     public void onAccountButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(SettingsMenu);
         activityHandler.loadActivity(ActivityPaths.accountMenu,AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(SettingsMenu);
     }
     //Click Credit Cards button
     public void onCardButtonClicked(MouseEvent mouseEvent) {
