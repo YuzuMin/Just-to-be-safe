@@ -128,12 +128,18 @@ public class AccountMenuController implements Initializable {
 
             //Encrypt Email
             String Email = email_field.getText();
+            if(Email.isBlank()){
+                Email=" ";
+            }
             Email = Email.replace(",", " | ");
             Email = encryptionHandler.cc_encrypt(Email, 71, 422);
             Email = Email + ",";
 
             //Encrypt Password
             String Password = pswd_field.getText();
+            if(Password.isBlank()){
+                Password=" ";
+            }
             Password = Password.replace(",", " | ");
             Password = encryptionHandler.cc_encrypt(Password, 72, 423);
 
