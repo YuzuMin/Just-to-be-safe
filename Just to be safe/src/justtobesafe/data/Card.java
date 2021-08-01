@@ -11,6 +11,22 @@ public class Card extends DataObject {
         this.expiry=expiry;
     }
 
+    public String getCardName() {
+        return DisplayName;
+    }
+
+    public void setCardName(String CardName){
+        DisplayName=CardName;
+    }
+
+    public String getCardNumber() {
+        return UniqueIdentifier;
+    }
+
+    public void setCardNumber(String CardNumber){
+        UniqueIdentifier=CardNumber;
+    }
+
     public String getCvv() {
         return cvv;
     }
