@@ -18,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
+import justtobesafe.alert.AlertPopup;
 import justtobesafe.asset.AssetPaths;
 import justtobesafe.data.Account;
 import justtobesafe.data.DataHandler;
@@ -65,14 +66,18 @@ public class AccountMenuController implements Initializable {
                 link_field.setText(accountList.get(value).getLink());
                 email_field.setText(accountList.get(value).getEmail());
                 pswd_field.setText(accountList.get(value).getPassword());
+
             }
         });
     }
 
 
     public void onLogoutButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(AccountMenu);
+        
+        AlertPopup.confirmation("Are you sure you want to logout now?","Just to be safe");
+
         activityHandler.loadActivity(ActivityPaths.loginActivity, AssetPaths.title, AssetPaths.icon);
+        activityHandler.closeStage(AccountMenu);
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
@@ -181,7 +186,11 @@ public class AccountMenuController implements Initializable {
         }else if (keyEvent.getCode().equals(KeyCode.F4)) {
             activityHandler.loadActivity(ActivityPaths.settingsMenu,AssetPaths.title,AssetPaths.icon);
             activityHandler.closeStage(AccountMenu);
+        }else if (keyEvent.getCode().equals(KeyCode.DELETE)) {
+            activityHandler.loadActivity(ActivityPaths.accountMenu, AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
         }
+
     }
 
     public void onTextFieldClicked(MouseEvent mouseEvent) {
