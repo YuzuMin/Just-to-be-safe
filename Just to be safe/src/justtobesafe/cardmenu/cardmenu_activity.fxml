@@ -31,9 +31,9 @@
                </children></AnchorPane>
                 <Button fx:id="setBtn" layoutX="14.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onSetButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="highlighted-button" text="Add" />
                 <Button fx:id="clearBtn" layoutX="220.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#onClearButtonClicked" prefHeight="39.0" prefWidth="114.0" styleClass="reg-button" text="Clear" />
-                <Button fx:id="copyBtn" layoutX="73.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="0.0" prefWidth="202.0" styleClass="copy-button" text="Copy to clipboard" />
-            <Label fx:id="warning1" layoutX="110.0" layoutY="329.0" text="" styleClass="warning-label"/>
-            <Label fx:id="warning2" layoutX="102.0" layoutY="329.0" text="" styleClass="warning-label"/>
+                <Button fx:id="copyBtn" layoutX="49.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#onCopyButtonClicked" prefHeight="31.0" prefWidth="250.0" styleClass="copy-button" text="Copy 16-digit number to clipboard" />
+            <Label fx:id="warning1" layoutX="110.0" layoutY="329.0" styleClass="warning-label" text="" />
+            <Label fx:id="warning2" layoutX="102.0" layoutY="329.0" styleClass="warning-label" text="" />
             </children>
         </AnchorPane>
     </children>
