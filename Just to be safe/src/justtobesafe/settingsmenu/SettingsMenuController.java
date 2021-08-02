@@ -24,8 +24,6 @@ public class SettingsMenuController {
 
     @FXML private AnchorPane SettingsMenu;
     @FXML private Label pswd_warning;
-    @FXML private Label pswd_warning1;
-    @FXML private Label pswd_warning2;
     @FXML private TextField passwd_field;
     @FXML private TextField passwd_reenter_field;
 
@@ -33,13 +31,9 @@ public class SettingsMenuController {
         String passwd=passwd_field.getText();
         String confirmPasswd=passwd_reenter_field.getText();
         if(passwd.isBlank()){
-            pswd_warning.setText("");
-            pswd_warning1.setText("Please enter a value");
-            pswd_warning2.setText("");
+            pswd_warning.setText("Please enter a value");
         }else if(confirmPasswd.isBlank()){
             pswd_warning.setText("Please confirm password");
-            pswd_warning1.setText("");
-            pswd_warning2.setText("");
         }else{
             if(passwd.equals(confirmPasswd)){
                 try{
@@ -53,22 +47,15 @@ public class SettingsMenuController {
                     passwd_field.setText("");
                     passwd_reenter_field.setText("");
                     Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
-                    pswd_warning.setText("");
-                    pswd_warning1.setText("");
-                    pswd_warning2.setText("");
                 }
             }else{
-                pswd_warning.setText("");
-                pswd_warning1.setText("");
-                pswd_warning2.setText("Passwords don't match");
+                pswd_warning.setText("Passwords don't match");
             }
         }
     }
 
     public void onTextFieldClicked(MouseEvent mouseEvent) {
         pswd_warning.setText("");
-        pswd_warning1.setText("");
-        pswd_warning2.setText("");
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
