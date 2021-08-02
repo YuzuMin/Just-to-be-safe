@@ -249,6 +249,10 @@ public class CardMenuController implements Initializable {
         }
     }
 
+    public void onTextFieldClicked(MouseEvent mouseEvent) {
+        warning.setText("");
+    }
+
     public void onDeleteButtonClicked(MouseEvent mouseEvent) {
         deleteAccount();
     }
