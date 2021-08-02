@@ -1,5 +1,6 @@
 package justtobesafe.data;
 
+// Java Imports
 import java.io.*;
 import java.util.LinkedList;
 
@@ -77,7 +78,7 @@ public class DataHandler implements FileInterface, CsvInterface{
     }
 
     @Override
-    public void deleteCSVFile(String file,LinkedList<String> inputlist) {
+    public void deleteCSVFile(String file,LinkedList<String> inputList) {
         try {
             //EMPTY CSV FILE
             FileOutputStream outputStream = new FileOutputStream(file);
@@ -87,14 +88,13 @@ public class DataHandler implements FileInterface, CsvInterface{
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            for (int i =0 ;i<inputlist.size();i++){
-                bufferedWriter.write(inputlist.get(i)+"\n");
+            for (int i =0 ;i<inputList.size();i++){
+                bufferedWriter.write(inputList.get(i)+"\n");
             }
 
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println("deleteCSVFile");
     }
 }
