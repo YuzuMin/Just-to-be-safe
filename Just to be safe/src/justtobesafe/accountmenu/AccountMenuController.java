@@ -40,8 +40,7 @@ public class AccountMenuController implements Initializable {
     @FXML private TextField link_field;
     @FXML private TextField email_field;
     @FXML private TextField pswd_field;
-    @FXML private Label warning1;
-    @FXML private Label warning2;
+    @FXML private Label warning;
     @FXML private ListView<String> accountView;
     @FXML private Button setBtn;
 
@@ -97,12 +96,10 @@ public class AccountMenuController implements Initializable {
     public void onSetButtonClicked(MouseEvent mouseEvent) {
         if(site_field.getText().isBlank()){
             site_field.setText("");
-            warning1.setText("Site Name Empty");
-            warning2.setText("");
+            warning.setText("Site Name Empty");
         }else if(link_field.getText().isBlank()){
             link_field.setText("");
-            warning1.setText("");
-            warning2.setText("Site Link Empty");
+            warning.setText("Site Link Empty");
         }else {
 
             //Encrypt Site Name
@@ -221,11 +218,13 @@ public class AccountMenuController implements Initializable {
     }
 
     public void onTextFieldClicked(MouseEvent mouseEvent) {
-        warning1.setText("");
-        warning2.setText("");
+        warning.setText("");
     }
 
     public void onDeleteButtonClicked(MouseEvent mouseEvent) {
         deleteAccount();
+    }
+
+    public void onCopyButtonClicked(MouseEvent mouseEvent) {
     }
 }
