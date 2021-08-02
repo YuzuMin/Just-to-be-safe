@@ -11,7 +11,6 @@ public class Account extends DataObject{
         this.password = Password;
     }
 
-
     public String getName(){
         return DisplayName;
     }
@@ -22,7 +21,6 @@ public class Account extends DataObject{
     public String getLink(){
         return UniqueIdentifier;
     }
-
     public void setLink(String Link){
         UniqueIdentifier=Link;
     }
@@ -30,7 +28,6 @@ public class Account extends DataObject{
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -38,7 +35,6 @@ public class Account extends DataObject{
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
