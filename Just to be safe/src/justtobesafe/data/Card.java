@@ -16,7 +16,6 @@ public class Card extends DataObject {
     public String getCardHolder() {
         return cardHolder;
     }
-
     public void setCardHolder(String cardHolder) {
         this.cardHolder = cardHolder;
     }
@@ -24,7 +23,6 @@ public class Card extends DataObject {
     public String getCardName() {
         return DisplayName;
     }
-
     public void setCardName(String CardName){
         DisplayName=CardName;
     }
@@ -32,7 +30,6 @@ public class Card extends DataObject {
     public String getCardNumber() {
         return UniqueIdentifier;
     }
-
     public void setCardNumber(String CardNumber){
         UniqueIdentifier=CardNumber;
     }
@@ -40,7 +37,6 @@ public class Card extends DataObject {
     public String getCvv() {
         return cvv;
     }
-
     public void setCvv(String cvv) {
         this.cvv = cvv;
     }
@@ -48,7 +44,6 @@ public class Card extends DataObject {
     public String getExpiry() {
         return expiry;
     }
-
     public void setExpiry(String expiry) {
         this.expiry = expiry;
     }
