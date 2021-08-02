@@ -1,5 +1,6 @@
 package justtobesafe.cardmenu;
 
+// JavaFX Imports
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -11,16 +12,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+// Program Imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.alert.AlertPopup;
 import justtobesafe.asset.AssetPaths;
-import justtobesafe.data.Account;
 import justtobesafe.data.Card;
 import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.toast.Toast;
-
+// Java Imports
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
