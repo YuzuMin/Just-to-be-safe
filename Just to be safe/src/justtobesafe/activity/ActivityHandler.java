@@ -1,13 +1,13 @@
 package justtobesafe.activity;
 
-import javafx.fxml.FXML;
+// JavaFX imports
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+// Java imports
 import java.io.IOException;
 
 public class ActivityHandler {
