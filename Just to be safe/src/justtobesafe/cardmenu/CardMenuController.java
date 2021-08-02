@@ -40,8 +40,7 @@ public class CardMenuController implements Initializable {
     @FXML private TextField expiry_field;
     @FXML private TextField cardholder_field;
     @FXML private ListView<String> cardView;
-    @FXML private Label warning1;
-    @FXML private Label warning2;
+    @FXML private Label warning;
     @FXML private Button setBtn;
 
     int position;
@@ -121,12 +120,10 @@ public class CardMenuController implements Initializable {
     public void onSetButtonClicked(MouseEvent mouseEvent) {
         if(cardName_field.getText().isBlank()){
             cardName_field.setText("");
-            warning1.setText("Card Name Empty");
-            warning2.setText("");
+            warning.setText("Card Name Empty");
         }else if(cardNum_field.getText().isBlank()){
             cardNum_field.setText("");
-            warning1.setText("");
-            warning2.setText("Card Number Empty");
+            warning.setText("Card Number Empty");
         }else {
             //Encrypt CardName
             String cardName =cardName_field.getText();
