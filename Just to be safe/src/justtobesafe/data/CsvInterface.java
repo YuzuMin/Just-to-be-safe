@@ -1,5 +1,6 @@
 package justtobesafe.data;
 
+// Java Imports
 import java.util.LinkedList;
 
 public interface CsvInterface {
