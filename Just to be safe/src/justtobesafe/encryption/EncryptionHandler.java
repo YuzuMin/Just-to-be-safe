@@ -1,6 +1,6 @@
 package justtobesafe.encryption;
 
-import java.io.*;
+//Java Imports
 import java.security.MessageDigest;
 
 public class EncryptionHandler implements SecureHashingAlgorithmInterface,CaesarCipherInterface,MessageDigestInterface  {
