@@ -1,7 +1,8 @@
 package justtobesafe.random;
 
+// Program Imports
 import justtobesafe.encryption.EncryptionHandler;
-
+// Java Imports
 import java.util.Arrays;
 import java.util.List;
 
