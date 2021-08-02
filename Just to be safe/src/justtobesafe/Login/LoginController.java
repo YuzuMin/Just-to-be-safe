@@ -1,6 +1,6 @@
 package justtobesafe.login;
 
-// JAVA FX Imports
+// JavaFX Imports
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.PasswordField;
@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-// Other imports
+// Program Imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.activity.ActivityPaths;
@@ -27,15 +27,8 @@ public class LoginController {
     EncryptionHandler encryptionHandler=new EncryptionHandler();
     ActivityHandler activityHandler=new ActivityHandler();
     DataHandler dataHandler =new DataHandler();
-    //String file = "src/resources/passwd/passwd";
 
     //Login Related Functions
-    //Authenticate password when user presses "Enter" key after typing in password field
-    public void EnterKeyPress(KeyEvent keyEvent) {
-        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-            authenticatePSWD();
-        }
-    }
     //Authenticate password when user presses on-screen Login button
     public void LoginButtonOnclick(MouseEvent mouseEvent) {
         authenticatePSWD();
@@ -62,13 +55,12 @@ public class LoginController {
         if (keyEvent.getCode().equals(KeyCode.ESCAPE)) {
             activityHandler.closeStage(LoginMenu);
         }else if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-            authenticatePSWD();
+            authenticatePSWD();                                 //Authenticate password when user presses "Enter" key after typing in password field
         }
     }
 
     //MISC functions
     public void PSWDFieldOnclick(MouseEvent mouseEvent) {
         pswd_warning.setText("");
-        password.setPromptText("Enter Password");
     }
 }
