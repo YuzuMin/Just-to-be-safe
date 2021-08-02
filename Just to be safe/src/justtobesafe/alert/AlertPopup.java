@@ -1,8 +1,9 @@
 package justtobesafe.alert;
 
+// JavaFX imports
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-
+// Java imports
 import java.util.Optional;
 
 public class AlertPopup {
