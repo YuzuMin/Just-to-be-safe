@@ -42,12 +42,6 @@
     -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #FAFB55, #F47E56);
 }
 
-
-.glyph-icon
-{
-    -fx-fill: -fx-primarytext;
-}
-
 .reg-button{
     -fx-text-fill: -fx-pimple_yellow;
     -fx-background-color: -fx-primary4;
@@ -221,26 +215,9 @@
     -fx-text-fill: -fx-pimple_yellow;
 }
 
-.menu-layer{
-    -fx-background-color: -fx-blvck;
-}
-
-.menu-label{
-    -fx-text-alignment: center;
-    -fx-font-size : 10pt;
-    -fx-text-fill: -fx-porcelain;
-}
-
-/*Login Screen Specific*/
 .warning-label{
     -fx-text-alignment: CENTER;
     -fx-text-fill: #FC4332;
-}
-
-.wrong-credentials
-{
-    -jfx-unfocus-color: #ef5350;
-    -jfx-focus-color: #ef5350;
 }
 
 .list-view{
