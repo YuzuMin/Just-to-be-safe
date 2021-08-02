@@ -1,5 +1,6 @@
 package justtobesafe.toast;
 
+//JavaFX Imports
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
