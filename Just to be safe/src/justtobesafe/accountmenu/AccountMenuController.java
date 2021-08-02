@@ -12,9 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import justtobesafe.activity.ActivityHandler;
@@ -34,6 +32,9 @@ public class AccountMenuController implements Initializable {
     EncryptionHandler encryptionHandler = new EncryptionHandler();
     ActivityHandler activityHandler = new ActivityHandler();
     DataHandler dataHandler = new DataHandler();
+
+    final Clipboard clipboard = Clipboard.getSystemClipboard();
+    final ClipboardContent content = new ClipboardContent();
 
     @FXML private AnchorPane AccountMenu;
     @FXML private TextField site_field;
@@ -101,7 +102,6 @@ public class AccountMenuController implements Initializable {
             link_field.setText("");
             warning.setText("Site Link Empty");
         }else {
-
             //Encrypt Site Name
             String Site = site_field.getText();
             Site = Site.replace(",", " | ");
@@ -226,5 +226,9 @@ public class AccountMenuController implements Initializable {
     }
 
     public void onCopyButtonClicked(MouseEvent mouseEvent) {
+        content.putString(link_field.getText());
+        clipboard.setContent(content);
+
+        Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Copied to clipboard", 500, 100, 100);
     }
 }
