@@ -12,6 +12,6 @@
          <image>
             <Image url="@../../resources/drawable/icon.png" />
          </image></ImageView>
-      <Label fx:id="pswd_warning" layoutX="267.0" layoutY="274.0" prefHeight="25.0" prefWidth="103.0" styleClass="warning-label" text="" textAlignment="CENTER" />
+      <Label fx:id="pswd_warning" layoutY="274.0" prefHeight="25.0" prefWidth="640.0" styleClass="warning-label" text="" alignment="CENTER" />
    </children>
 </AnchorPane>
