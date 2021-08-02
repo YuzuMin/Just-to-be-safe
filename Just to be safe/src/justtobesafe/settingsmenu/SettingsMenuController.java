@@ -1,5 +1,6 @@
 package justtobesafe.settingsmenu;
 
+//JavaFX Imports
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -8,7 +9,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
+//Program Imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.alert.AlertPopup;
