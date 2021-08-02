@@ -1,6 +1,6 @@
 package justtobesafe;
 
-// Java FX Imports
+// JavaFX Imports
 import javafx.application.Application;
 import javafx.stage.Stage;
 // Program imports
