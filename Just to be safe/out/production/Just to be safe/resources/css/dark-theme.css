@@ -216,6 +216,8 @@
 }
 
 .warning-label{
+    -fx-font-size : 13pt;
+    -fx-font-weight : bold;
     -fx-text-alignment: CENTER;
     -fx-text-fill: #FC4332;
 }
