@@ -1,20 +1,18 @@
 package justtobesafe.accountmenu;
 
+// JavaFX imports
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+// Program Imports
 import justtobesafe.activity.ActivityHandler;
 import justtobesafe.activity.ActivityPaths;
 import justtobesafe.alert.AlertPopup;
@@ -23,7 +21,7 @@ import justtobesafe.data.Account;
 import justtobesafe.data.DataHandler;
 import justtobesafe.encryption.EncryptionHandler;
 import justtobesafe.toast.Toast;
-
+// Java imports
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -90,8 +88,19 @@ public class AccountMenuController implements Initializable {
     }
 
     public void onHomeButtonClicked(MouseEvent mouseEvent) {
-        activityHandler.closeStage(AccountMenu);
-        activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+        if((!site_field.getText().isBlank())||(!link_field.getText().isBlank())){
+            String displayText="Are you sure you want to leave?";
+            String smallText="You have unsaved changes.";
+            String displayTitle="Confirm Logout";
+            boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+            if(confirmed) {
+                activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+                activityHandler.closeStage(AccountMenu);
+            }
+        }else{
+            activityHandler.loadActivity(ActivityPaths.homeMenu,AssetPaths.title, AssetPaths.icon);
+            activityHandler.closeStage(AccountMenu);
+        }
     }
 
     public void onSetButtonClicked(MouseEvent mouseEvent) {
