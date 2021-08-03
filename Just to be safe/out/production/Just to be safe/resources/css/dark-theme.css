@@ -195,7 +195,12 @@
     -fx-background-color: -fx-primary3;
     -fx-text-fill: -fx-pimple_yellow;
 }
-
+.context-menu {
+    -fx-background-color:  -fx-primary4;
+    -fx-text-fill: -fx-porcelain;
+    -fx-font-size: 14;
+    -fx-min-width: 150px;
+}
 .label{
     -fx-text-alignment: center;
     -fx-font-size : 12pt;
