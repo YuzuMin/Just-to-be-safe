@@ -153,14 +153,28 @@ public class AccountMenuController implements Initializable {
             String data = Site + Link + Email + Password;
 
             if(setBtn.getText().equals("Update")){
-                accountEncryptedStringList.set(position,data);
-                dataHandler.deleteCSVFile(AssetPaths.acctCSV, accountEncryptedStringList);
-                Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Updated Successfully", 500, 1000, 500);
+                String displayText="Are you sure you want to update?";
+                String smallText="";
+                String displayTitle="Confirm Update";
+
+                boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+                if(confirmed){
+                    try {
+                        accountEncryptedStringList.set(position,data);
+                        dataHandler.deleteCSVFile(AssetPaths.acctCSV, accountEncryptedStringList);
+                        //Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Updated Successfully", 500, 1000, 500);
+                    }finally{
+                        onClearButtonClicked(mouseEvent);
+                    }
+                }
             }else{
-                dataHandler.writeCsvFile(AssetPaths.acctCSV, data+ "\n");
-                Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Added Successfully", 500, 1000, 500);
+                try {
+                    dataHandler.writeCsvFile(AssetPaths.acctCSV, data + "\n");
+                    //Toast.makeText(((Stage) AccountMenu.getScene().getWindow()), "Account Added Successfully", 500, 1000, 500);
+                }finally{
+                    onClearButtonClicked(mouseEvent);
+                }
             }
-            onClearButtonClicked(mouseEvent);
         }
     }
 
