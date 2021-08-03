@@ -23,7 +23,7 @@
                 <Label layoutX="90.0" layoutY="14.0" styleClass="title-label" text="Credit Card Display" />
                 <AnchorPane layoutX="15.0" layoutY="64.0" prefHeight="192.0" prefWidth="318.0" styleClass="card-layer">
                <children>
-                      <TextField fx:id="cardName_field" layoutY="2.0" prefHeight="40.0" prefWidth="318.0" promptText="My Credit Card" styleClass="card-field" onMouseClicked="#onTextFieldClicked" />
+                      <TextField fx:id="cardName_field" layoutY="2.0" prefHeight="40.0" prefWidth="318.0" promptText="My Credit Card's Name" styleClass="card-field" onMouseClicked="#onTextFieldClicked" />
                       <TextField fx:id="cardNum_field" layoutY="56.0" onKeyTyped="#cardnumOnKeyTyped" prefHeight="40.0" prefWidth="318.0" promptText="XXXX-XXXX-XXXX-XXXX" styleClass="card-field" onMouseClicked="#onTextFieldClicked" />
                       <TextField fx:id="expiry_field" layoutY="112.0" prefHeight="40.0" prefWidth="94.0" promptText="MM/YY" styleClass="card-field" onMouseClicked="#onTextFieldClicked"/>
                       <TextField fx:id="cvv_field" layoutX="148.0" layoutY="112.0" prefHeight="32.0" prefWidth="63.0" promptText="888" styleClass="card-field" onMouseClicked="#onTextFieldClicked"/>
