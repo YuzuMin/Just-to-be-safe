@@ -20,7 +20,12 @@
 .root{
     -fx-background-color: -fx-primary;
 }
-
+.context-menu {
+    -fx-background-color:  -fx-primary4;
+    -fx-text-fill: -fx-porcelain;
+    -fx-font-size: 14;
+    -fx-min-width: 150px;
+}
 
 .text-field{
     -fx-border-radius: 8;
