@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Just to be safe:jar2" />
+      <artifact name="Just to be safe:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
