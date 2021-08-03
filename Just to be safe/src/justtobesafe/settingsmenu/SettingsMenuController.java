@@ -37,17 +37,24 @@ public class SettingsMenuController {
             pswd_warning.setText("Please confirm password");
         }else{
             if(passwd.equals(confirmPasswd)){
-                try{
-                    String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
-                    pswd = encryptionHandler.sha512(pswd);
-                    pswd = encryptionHandler.cc_encrypt(pswd,69,420);
-                    dataHandler.writeFile(AssetPaths.passwd,pswd);
-                }catch(Exception ex){
+                String displayText="Are you sure you want to reset password?";
+                String smallText="";
+                String displayTitle="Confirm Password Reset";
 
-                }finally{
-                    passwd_field.setText("");
-                    passwd_reenter_field.setText("");
-                    Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
+                boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+                if(confirmed){
+                    try{
+                        String pswd = encryptionHandler.cc_encrypt(passwd,69,420);
+                        pswd = encryptionHandler.sha512(pswd);
+                        pswd = encryptionHandler.cc_encrypt(pswd,69,420);
+                        dataHandler.writeFile(AssetPaths.passwd,pswd);
+                    }catch(Exception ex){
+
+                    }finally{
+                        passwd_field.setText("");
+                        passwd_reenter_field.setText("");
+                        Toast.makeText(((Stage) SettingsMenu.getScene().getWindow()), "Password Changed Successfully", 500,1000,500);
+                    }
                 }
             }else{
                 pswd_warning.setText("Passwords don't match");
