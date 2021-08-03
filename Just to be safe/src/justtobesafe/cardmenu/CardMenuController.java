@@ -175,17 +175,28 @@ public class CardMenuController implements Initializable {
             //Write as String
             String data = cardName + cardNum + cvv + expiry + cardHolder;
 
-            try{
-                if(setBtn.getText().equals("Update")){
-                    cardEncryptedStringList.set(position,data);
-                    dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
-                    //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Updated Successfully", 500, 1000, 500);
-                }else{
-                    dataHandler.writeCsvFile(AssetPaths.cardCSV, data+ "\n");
-                    //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Added Successfully", 500, 1000, 500);
+            if(setBtn.getText().equals("Update")){
+                String displayText="Are you sure you want to update?";
+                String smallText="";
+                String displayTitle="Confirm Update";
+
+                boolean confirmed= AlertPopup.confirmation(displayText,smallText,displayTitle);
+                if(confirmed){
+                    try {
+                        cardEncryptedStringList.set(position, data);
+                        dataHandler.deleteCSVFile(AssetPaths.cardCSV, cardEncryptedStringList);
+                    }finally{
+                        onClearButtonClicked(mouseEvent);
+                    }
                 }
-            }finally {
-                onClearButtonClicked(mouseEvent);
+                //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Updated Successfully", 500, 1000, 500);
+            }else{
+                try {
+                    dataHandler.writeCsvFile(AssetPaths.cardCSV, data+ "\n");
+                }finally{
+                    onClearButtonClicked(mouseEvent);
+                }
+                //Toast.makeText(((Stage) CardMenu.getScene().getWindow()), "Card Added Successfully", 500, 1000, 500);
             }
         }
     }
